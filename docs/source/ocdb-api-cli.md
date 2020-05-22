@@ -123,7 +123,7 @@ ocdb-cli ds find --expr "investigators: *Astrid*"
 
 python:
 ```python
-api.find_datasets(expr="investigators:*Astrid*")
+api.find_datasets(expr="investigators=*Astrid*")
 
 {
   "locations": {},
