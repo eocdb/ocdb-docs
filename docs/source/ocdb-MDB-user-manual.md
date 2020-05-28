@@ -22,7 +22,7 @@ Each MDB file contains:
 
 - For AERONET-OC MDB only: all original Version 3 data from AERONET-OC network
 
-- For MOBY MDB only: all original data from MOBY Gold directory (both, when available, from top and middle arms and from top and bottom arms measurements)
+- For MOBY MDB only: MOBY data (when available, from top and middle arms and from top and bottom arms measurements), generated through concolutiona and band-shifting to nominal OLCI bands, from hypespectral data
 
 - Fully normalized _in-situ_ Rrs at OLCI nominal bands obtained through **band-shifting** (when Δλ>1 in the visible) and BRDF correction, when not applied already at source
 
@@ -67,13 +67,17 @@ Equation 1: Lw_fQn(λ)/F0(λ)
 - Band-shift correction (Mélin & Sclep, 2015) is applied when distance between central OLCI band and AERONET-OC central band wavelength is larger. 
 
 ### Preparing in situ data: MOBY
-MOBY data are stored in ascii files, downloaded from MOBY Gold Directory (https://www.star.nesdis.noaa.gov/sod/moby/gold/). Normalised water leaving reflectance (Lwn) from MOBY is already provided at OLCI bands from 1 to 12, resampled according to S3A average OLCI Spectral Response Functions (SRFs). In order to retrieve Rrs, Lwn is thus divided by extraterrestrial solar irradiance (F0), and corrected for BRDF effect, as in Equation 2:
+
+MOBY hyperspectral data are convoluted and band-shifted to OLCI nominal bands. 
+Tables containing the convoluted values and metadata are stored, produced using spectral ascii file to gather Lw and Ed values (https://www.star.nesdis.noaa.gov/socd/moby/filtered_spec/), and multispectral ascii files, downloaded from MOBY Gold Directory (https://www.star.nesdis.noaa.gov/sod/moby/gold/), to get the metadata for each spectrum. 
+Lw and Ed values are first convoluted to OLCI bands using average SRFs function for A and B respectively. Rrs is then obtained , as in Equation 2.
+Band shifting is then applied, based on Mélin and Sclep (2015) work.
 
 ```
-Equation 2: Lwn(λ)/F0(λ)*BRDF(λ)
+Equation 2: Rrs(λ) = Lw(λ)/Ed(λ) * BRDF(λ)
 ```
 
-where Lwn(λ) is MOBY Lwn2 for each band, provided in the Gold directory files, derived from top and middle arm measurements, and from top and bottom arm measurements. F0(λ) values are provided in OLCI L2 SRFs files. BBRDF factors are retrieved using the same algorithm implemented in OLCI Level-2 Ocean Colour algorithm (chlorophyll concentration based), using Look-Up Tables (LUTs) provided in S3A Ocean colour parameters (OCP) Auxiliary Data File (ADF). For the calculation of BRDF factors, wind speed provided in OLCI products is used (the mean values for the 25*25 pixels extraction); solar position is obtained by MOBY measurement time and location through _astropy_ Python package (Price-Whelan et al., 2018); chlorophyll concentration is obtained applying OLCI OC4ME algorithm on Rrs values (Lwn(λ)/F0(λ)) before BRDF correction. 
+BRDF factors are retrieved using the same algorithm implemented in OLCI Level-2 Ocean Colour algorithm (chlorophyll concentration based), using Look-Up Tables (LUTs) provided in S3A Ocean colour parameters (OCP) Auxiliary Data File (ADF). For the calculation of BRDF factors, wind speed provided in OLCI products is used (the mean values for the 25*25 pixels extraction); solar position is obtained by MOBY measurement time and location through _astropy_ Python package (Price-Whelan et al., 2018); chlorophyll concentration is obtained applying OLCI OC4ME algorithm on Rrs values before BRDF correction. 
 
 ## Preparing in situ data: other sources
 Data gathered from other sources (e.g. Copernicus OCDB, SeaBASS) are checekd for protocols complience and quality.
