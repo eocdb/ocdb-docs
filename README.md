@@ -2,3 +2,7 @@
 
 
 # Documentation for the Copernicus Ocean Colour Database (OCDB)
+
+>Copyright (C) 2020 Copernicus/EUMETSAT  
+>
+>License: MIT
