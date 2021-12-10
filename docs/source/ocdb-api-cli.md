@@ -1,8 +1,7 @@
 # The OCDB Command Line Client and Python API
 
 Automation and easy access is important. The OCDB database system does,
-therefore,
-offer a command line interface as well as a Python API for accessing
+therefore, offer a command line interface as well as a Python API for accessing
 as well as managing submissions and users. 
 
 
@@ -69,9 +68,10 @@ api.set_config_param('server_url','[some server url]')
 
 ## Search Database with the Python API
 
-The method 'find_datasets' allows querying the Database for several information, using different keywords:
-- __expr__: looks for any files containing any of the words passed. Also Lucene syntax can be used (See below for more details)
-- __region__: looks for files containg measurements collected in the polygon defined by specified coordinates (format: "[West],[South],[East],[North]")
+After login (see chapter "User Management" below), the method 'find_datasets' allows querying the Database for several information, using different keywords:
+
+- __expr__: looks for any files containing any of the words passed. Also, Lucene syntax can be used (See below for more details)
+- __region__: looks for files containing measurements collected in the polygon defined by specified coordinates (format: "[West],[South],[East],[North]")
 - __start_time__: looks for any files containing measurement collected later than the selected date (format: "2016-07-01")
 - __end_time__: looks for any files containing measurement collected earlier than the selected date (format: "2019-07-01")
 - __wdepth__: looks for any files containing measurements collected within the defined range of water (bottom) depth (format:"[[min_depth],[max_depth]]")
@@ -79,11 +79,11 @@ The method 'find_datasets' allows querying the Database for several information,
 - __shallow__: set to 'yes' to include also measurements indicated as done in shallow waters by the PIs (Default is 'no')
 - __pmode__: can be set either to 'contains' (to filter results based on selected pgroup or variables), or to 'same_cruise' (to include measurements from cruise during which __all__ the selected groups/variables were acquired), or to 'do_not_filter' (to not filter results at all) 
 - __pgroup__: looks for files containing only certain geophysical variable types. Refer to [Search](ocdb-search.md) chapter for the complete list
-- __pname__: looks for files containing only the specified variables. A complete list of queryable variables are avaialable [here](ocdb-standard-field-unit.md)
+- __pname__: looks for files containing only the specified variables. A complete list of queryable variables are available [here](ocdb-standard-field-unit.md)
 - __status__: set to 'PUBLISHED' to get only public available data or to 'PROCESSED' to get both public and not published data (available only for admin users and data owners) 
 - __submission_id__: looks for data submitted below the specified submission label
 - __geojson__: (Default is True)
-- __user_id__: look for data sumbmitted by the specified user (by username)
+- __user_id__: look for data submitted by the specified user (by username)
 
 The results is a dictionary containing information and whole dataset related to the file containing the measurement the satisfied the search criteria.
 Dictionary keys are: 
@@ -164,6 +164,18 @@ api.get_dataset(dataset_id='5d971154f9305e0001c6d700', fmt='pandas')
 
 ## User Management
 
+Commands:
+- __add__     Add a user (see below)
+- __delete__  Delete user by <username> (see below)
+- __get__     Get user <username> (see below)
+- __list__    List users (ocdb-cli user list)
+- __login__   Login a user (see below)
+- __logout__  Log out current user if logged in (ocdb-cli user logout)
+- __ownpwd__  Set the password for the current user (see below)
+- __pwd__     Set the password for an existing user (see below)
+- __update__  Update an existing user (see below)
+- __whoami__  Who am I (ocdb-cli user whoami)
+
 __Login User__:
 
 The login procedure will ask for a user name and password. You can specify the password
@@ -174,7 +186,7 @@ a 'submitter' user. 'scott', after login, could submit data to the system but he
 
 cli:
 ```bash
-ocdb-cli user login --user scott --password tiger
+ocdb-cli user login --username scott --password tiger
 ```
 
 python:
@@ -206,7 +218,7 @@ __Get User Information__:
 
 cli:
 ```bash
-ocdb-cli user get --user scott
+ocdb-cli user get scott
 ```
 
 python:
@@ -222,7 +234,7 @@ __Delete a User__:
 
 cli:
 ```bash
-ocdb-cli user delete --user scott
+ocdb-cli user delete scott
 ```
 
 python:
@@ -233,10 +245,19 @@ You need to have administrative access rights to be able to complete this action
 
 __Update an Existing User__:
 
+The following fields can be updated:
+
+- name (username)
+- first_name
+- last_name
+- email
+- phone
+- roles
+- id
 
 cli:
 ```bash
-ocdb-cli user update --key <field to be updated> --value <your value>
+ocdb-cli user update --username scott --key <field to be updated> --value <your value>
 ```
 
 python:
@@ -246,7 +267,7 @@ api.update_user(<user_name>, key=<key>, value=<value>)
 
 You need to have administrative access rights to perform this operation for any user. 
 
-__Update password__:
+__Update own password__:
 
 Any user can update his own password, after login.
 
@@ -260,11 +281,18 @@ python:
 api.change_user_login(<username>,<old_password>,<new_password>)
 ```
 
+__Update password of an existing user__
 
+Admins can update password of other users.
+
+cli
+```bash
+ocdb-cli user pwd -u scott -p <new password>
+```
 ## Managing Submissions
 
 __Upload a new submission__:
-to contribute data trhough a new submission.
+To contribute data through a new submission.
 
 cli:
 ```bash
