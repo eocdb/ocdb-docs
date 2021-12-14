@@ -1,7 +1,8 @@
 # User Manual for the OCDB WebUI
 
-The main feature of the OCDB Database system is the stewardship of in-situ FRM data and data provision to the Ocean Colour community through an enhanced search facility. 
-
+The main feature of the OCDB Database system is the stewardship and provision of
+high-quality in-situ data to the Ocean Colour community through an enhanced search
+facility. 
 
 ## Get Data: Search
 
@@ -28,7 +29,7 @@ or by drawing a polygon on the map.
 In advanced options menu, __single products__ can be selected (a list of standard names for variables is available
 [here](ocdb-standard-field-unit.md)).
 The wavelength option allows to filter __hyperspectral__ and __multispectral__ measurements. __Water depth__ threshold
-can also be set (when provided in metadata). Finally measurements taken in optically shallow waters can be either
+can also be set (when provided in metadata). Finally, measurements taken in optically shallow waters can be either
 excluded or selected. 
 
 ![](static/webui/advanced_options.png)
@@ -47,10 +48,10 @@ Registered users after login in can manage new and past submission in the _Submi
 
 ### New Submission
 
-To add a __new submission__, click on _NEW SUBMISSION_ on the top right corner.
+To add a __new submission__, click on _NEW SUBMISSION_ in the top right corner.
 A new dialog will open. Please add an identifier (_Submission Label_) for the submission and a path
 (_affiliation/experiment/cruise_) where submission files will be stored under.
-The submission label will univocally refer to the submission, while submission path could be the same for
+The submission label must univocally refer to the submission, while submission path could be the same for
 multiple submissions.
 
 ![](static/webui/submission_dialog.png)
@@ -66,16 +67,26 @@ File format and documentation required are described [here](ocdb-contribute.md).
 Click on _SUBMIT_ to initiate the validation process.
 Files containing measurements are immediately automatically checked according to [validation rules](ocdb-validation-config.md).
 Click on _List Files_ available among _Actions_ tools and scroll to the end of the webpage to see the results of the
-validation, shown for each file. In case of errors, the status of the submission is set to _SUBMITTED_.
+validation, shown for each file. In case of errors, the status of the submission
+is set to _SUBMITTED_.
+
 Submissions containing errors are not further processed into the Database.
-If you need assistance, please contact ops@eumetsat.int indicating the identifier (_Submission label_) of the submission. 
+If you need assistance, please contact ops@eumetsat.int indicating the identifier
+(_Submission label_) of the submission. 
 
 ![](static/webui/submission.png)
 
-In case of errors or warnings, for each file, click on _List Import Issues_ ![](static/webui/list.png) to show the list
-of error and warning messages.
+In case of errors or warnings, for each submission, click on ![](static/webui/list.png)
+_List Files_. Then scroll to the end of the page, where a list of the uploaded files
+will appear:
 
 ![](static/webui/list_ex.png)
+
+Click on ![](static/webui/list.png) _List import Issues_ to show
+the list of error and warning messages, e. g.:
+
+![](static/webui/list_import_issues_dlg.png)
+
 
 Single files can be thus downloaded ![](static/webui/download.png) and re-uploaded ![](static/webui/upload.png) and
 validated again.
@@ -141,7 +152,7 @@ This data can be anytime re-processed into the Database from the _Submit_ page.
 
 ### Submission Status
 
-Through the above actions, the following stati for submissions can be set
+For each file, the following status can be set:
 
 - __SUBMITTED__: submission contains errors and could not be validated
 - __VALIDATED__: all submission files passed file format check (no errors, warnings allowed)
@@ -150,8 +161,8 @@ Through the above actions, the following stati for submissions can be set
 - __PUBLISHED__: submission data are searchable in the Database by anyone
 
 Whenever a submission is updated, its status in the submission page is set accordingly to _SUBMITTED_ or _VALIDATED_ again. 
-On the other hand, files already published and searchable are not updated until the new/updated files are not processed
-by Database administrators, and the oldest version remains available.
+On the other hand, files already published and searchable are not updated until the new/updated files are processed
+by Database administrators. Instead, the oldest version remains available.
 
 ### Submission File Actions
 
@@ -186,7 +197,7 @@ Re-upload a new version of the file. The old one is overwritten. The validation 
 
 ### Submission File Status
 
-For each file of a submission, the following stati can be set:
+For each file, the following status can be set:
 
 - __ERROR__: there are errors in the format of the file
 - __WARNING__: there are warnings regarding the format of the file. 

@@ -5,7 +5,8 @@
 
 Welcome to the Copernicus OCDB Database System (OCDB)!
 ======================================================
-Comparison between simultaneous in-situ measurements and satellite sensor products are fundamental for satellite product validation, to prove the accuracy and limitations of the data services.
+Comparison between simultaneous in-situ and satellite measurements are fundamental for satellite product validation,
+to prove the accuracy and limitations of the data services.
 In addition, in-situ measurements alone or combined with satellite products are required for Ocean Colour algorithm development.
 Considering the need for sustained access to in situ-Fiducial Reference Measurements for the Copernicus programme, the aim of the Copernicus Ocean Colour Database (OCDB_) is to provide a platform to collect, organize and make available to the ocean colour community, ocean colour related in-situ measurements, and to ensure long-term stewardship of these critical data.
 

@@ -2,7 +2,11 @@
 
 Automation and easy access is important. The OCDB database system does,
 therefore, offer a command line interface as well as a Python API for accessing
-as well as managing submissions and users. 
+as well as managing submissions and users.
+
+Both options offer the same functions. If you just want to apply one or more of these functions,
+the command line interface (CLI) will suit your needs. Otherwise, use the OCDB API in Python scripts
+to integrate OCDB API functions together with other Python methods.
 
 
 ## Installation
@@ -15,6 +19,7 @@ conda install -c ocdb -c conda-forge ocdb-client
 
 Once that is done, you can test whether it is running by
 
+cli:
 ```bash
 ocdb-cli
 
@@ -40,7 +45,7 @@ Commands:
 ## Configure
 
 In order to access the database you need to configure the REST API server address.
-The default address is ```https://ocdb.eumetsat.int```.
+The default address to be used is ```https://ocdb.eumetsat.int```, i. e.:
 
 
 cli:
@@ -66,7 +71,7 @@ api.set_config_param('server_url','[some server url]')
 
 ```
 
-## Search Database with the Python API
+## Search Database with find_datasets()
 
 After login (see chapter "User Management" below), the method 'find_datasets' allows querying the Database for several information, using different keywords:
 
@@ -87,13 +92,20 @@ After login (see chapter "User Management" below), the method 'find_datasets' al
 
 The results is a dictionary containing information and whole dataset related to the file containing the measurement the satisfied the search criteria.
 Dictionary keys are: 
+
+- *locations*: geometries representing the spatial extent of each dataset (point or rectangle)
 - *total_count*: number of datasets returned by the query
-- _datasets_: information about dataset files and the submissions they belong to
-- _query_: query parametrization
+- *datasets*: information about dataset files and the submissions they belong to
+- *query*: query parameterization
 - *dataset_ids*: ids of the returned datasets
 
-python:
+cli: 
 ```bash
+ocdb-cli ds find --query region=50,45,51,46
+```
+
+python:
+```python
 data = api.find_datasets(region='50,45,51,46')
 data['datasets']
 
@@ -106,7 +118,7 @@ data['datasets']
 The first example below attempts to find data files that include the name *"Astrid"* in the investigators meta field.
 
 
-bash:
+cli:
 ```bash
 ocdb-cli ds find --expr "investigators: *Astrid*"
 
@@ -142,7 +154,7 @@ A complete and up-to-date list of the fields that can be queried is available [h
 
 The search engine returns a list of datasets. In order to retrieve the actual data, dataset IDs obtained through the previous step, using cli ds find function and api find_datasets method, should be used. A dataset ID can be used to get actual data as in the example below:
 
-bash:
+cli:
 ```bash
 ocdb-cli ds get --id 5d971154f9305e0001c6d700
 ```
@@ -181,8 +193,10 @@ __Login User__:
 The login procedure will ask for a user name and password. You can specify the password
  as an option. However, under normal circumstances we advice to use the command line prompt.
 
-The example below will login a user with the user name 'scott'. 'scott' is
-a 'submitter' user. 'scott', after login, could submit data to the system but he has not have any administrative privileges.
+The example below will login a user with the user name 'scott'.
+'scott' is a 'submitter' user. 'scott', after login, could
+submit data to the system, but he does not have any
+administrative privileges.
 
 cli:
 ```bash
@@ -193,9 +207,31 @@ python:
 ```python
 api.login_user(username='scott', password='tiger')
 ```
+cli:
+```bash
+ocdb-cli user logout
+```
 
+python:
+```bash
+api.logout_user()
+```
 
-__Add User__:
+__Who am I?__
+
+To find out whether you are logged in or who is logged in
+
+cli:
+```bash
+ocdb-cli user whoami
+```
+
+python:
+```python
+api.whoami_user()
+```
+
+__Add User__ (admin only):
 
 To add a user, specify the required user information
 
@@ -214,7 +250,7 @@ api.add_user(username='<user_name>', password='<passwd>', roles=['<role1>, <role
 You need to have administrative access rights to be able to complete this action.
 
 
-__Get User Information__:
+__Get User Information__ (admin only):
 
 cli:
 ```bash
@@ -226,10 +262,9 @@ python:
 api.get_user(username='scott')
 ```
 
-You need to have administrative access rights to perform this operation for any user. 
 Users can request their own information without restrictions.
 
-__Delete a User__:
+__Delete a User__ (admin only):
 
 
 cli:
@@ -239,11 +274,10 @@ ocdb-cli user delete scott
 
 python:
 ```python
-api.delete_user(name='scott')
+api.delete_user(username='scott')
 ```
-You need to have administrative access rights to be able to complete this action.
 
-__Update an Existing User__:
+__Update an Existing User__ (admin only):
 
 The following fields can be updated:
 
@@ -265,7 +299,24 @@ python:
 api.update_user(<user_name>, key=<key>, value=<value>)
 ```
 
-You need to have administrative access rights to perform this operation for any user. 
+Users can update their own user details without restrictions.
+
+*Forgotten password*
+
+Please contact ServiceDesk@eumetsat.int [Subject: OCDB, forgotten password (username = …)]
+
+*Reset a forgotten password from a user* (admin only)
+
+To recover a user’s password,  use the update_user command as follows:
+
+python:
+
+```bash
+api.update_user(<user_name>, key=’password’, value=<test_password>)
+```
+
+Provide this <test_password> to the user and ask him/her to change
+it immediately.
 
 __Update own password__:
 
@@ -289,6 +340,8 @@ cli
 ```bash
 ocdb-cli user pwd -u scott -p <new password>
 ```
+
+
 ## Managing Submissions
 
 __Upload a new submission__:
@@ -298,6 +351,11 @@ cli:
 ```bash
 ocdb-cli sbm upload "<affiliation>/<experiment>/<cruise>" <data files list> -s <submission label> -ap -d <document files list>
 ```
+
+&lt;data files list&gt; correspond to a list of comma separated full paths of measurement files.
+
+&lt;document files list&gt; correspond to a list of comma separated full paths of document files.
+
 -ap should be set **only** to allow data be available for the general public
 
 python:
@@ -308,7 +366,7 @@ api.upload_submission('<affilition>/<experiment>/<cruise>',dataset_files=('<file
 *publication_date* should be set only when data can be available for the general public but only after the specified date
 
 
-__Get Submission__:
+__Get Submission__ (admin only):
 to get information for a specific submission
 
 cli:
@@ -321,10 +379,10 @@ python:
 api.get_submission('IOPstudy2')
 ```
 
-You need to have administrative access rights to perform this operation for any submission. 
 Users can monitor their own submissions without restrictions.
 
-__Get Submissions for a specific User__:
+
+__Get Submissions for a specific User__ (admin only):
 
 
 cli:
@@ -337,7 +395,6 @@ python:
 api.get_submissions_for_user('scott')
 ```
 
-You need to have administrative access rights to perform this operation for any submission. 
 Users can monitor their own submissions without restrictions.
 
 
@@ -410,7 +467,8 @@ api.download_submission_file(<submission_label>,<index>, out_fn =  <file_name>)
 __Upload Submission File__:
 
 
-Both measurement and documentation files can be added to **an existing submission**
+Both, existing measurement and documentation files, can be added to
+**an existing submission** replacing existing files with updated files.
 
 
 cli:
@@ -425,7 +483,8 @@ api.add_submission_file(<submission_label>,<local_file>,<type>)
 where _type_ could be 'MEASUREMENT' or 'DOCUMENT'
 
 
-Both **existing measurement and documentation files** can be added to updated, replacing them with a new file from local.
+Both **existing measurement and documentation files** can be added to updated, replacing
+them with a new file from local.
 
 cli:
 ```bash
