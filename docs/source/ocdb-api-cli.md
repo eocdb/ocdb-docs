@@ -465,8 +465,8 @@ api.download_submission_file(<submission_label>,<index>, out_fn =  <file_name>)
 __Upload Submission File__:
 
 
-Both, existing measurement and documentation files, can be added to
-**an existing submission** replacing existing files with updated files.
+Both, measurement and documentation files, can be added to
+**an existing submission**. Existing files will be replaced with updated files.
 
 
 cli:
