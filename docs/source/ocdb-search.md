@@ -4,9 +4,9 @@ All data the submittors have agreed to publish is searchable for the public.
 The OCDB WebUI offers a graphical search interface. Main feature of this interface is the search text field.
 Just entering any __word__ allows also querying the Database for anyfile containing that specific word.
 
-For example typing 'chl Rrs', all the files containing the world 'chl' or 'Rrs' are returned.
+For example typing 'chl Rrs', all the mesurement files containing the word 'chl' or 'Rrs' in the header are returned.
 
-This field also allows using the so-called __Lucene syntax__ which enables you to search for specific field values and also allows chaining. A concise description of the full Lucene query language syntax can be found [here])https://lucene.apache.org/core/2_9_4/queryparsersyntax.html). 
+This field also allows using the so-called __Lucene syntax__ which enables you to search for specific field values and also allows chaining. A concise description of the full Lucene query language syntax can be found [here](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html). 
 
 Please note that the OCDB system does not support the complete syntax.
 
@@ -53,7 +53,7 @@ water_depth: < 10
 ```
 
 Allows to search for datasets where a field is greater that or smaller than a reference. For number fields the functionality is obvious. 
-When applying the operator to String fields, alphanumerical comparisoins are used (i.e. C>B is TRUE).
+When applying the operator to String fields, alphanumerical comparisons are used (i.e. C>B is TRUE).
 
 __Possible fields are__:
 
