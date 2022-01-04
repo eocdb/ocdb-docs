@@ -248,7 +248,6 @@ api.add_user(username='<user_name>', password='<passwd>', roles=['<role1>, <role
 ```
 
 <role1> could be either 'submit' (for any users) or 'admin' (for admin users only).
-You need to have administrative access rights to be able to complete this action.
 
 
 __Get User Information__ (admin only):
@@ -278,7 +277,7 @@ python:
 api.delete_user(username='scott')
 ```
 
-__Update an Existing User__ (admin only):
+__Update an Existing User__ (admin or the respective user themselves only):
 
 The following fields can be updated:
 
@@ -399,7 +398,7 @@ api.get_submissions_for_user('scott')
 Users can monitor their own submissions without restrictions.
 
 
-__Delete Submission__:
+__Delete Submission__ (admin only):
 
 
 cli:
@@ -411,11 +410,10 @@ python:
 ```python
 api.delete_submission(<submission-id>)
 ```
-You need to have administrative access rights to perform this operation for any submission. 
 Users can delete their own submissions without restrictions.
 
 
-__Update Submission Status__:
+__Update Submission Status__ (admin only):
 
 This command allows to manipulate the status assigned to any submission. Some status changes will have impact on
 whether the data are searchable or not in the Database.
@@ -442,7 +440,6 @@ python
 api.update_submission_status(<submission-id>, <status>)
 ```
 
-You need to have administrative access rights to perform this operation for any submission. 
 Users can submit, cancel and pause their own submissions without restrictions.
 
 
