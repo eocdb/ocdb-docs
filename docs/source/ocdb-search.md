@@ -31,9 +31,7 @@ investigators: *Colleen*
 investigators: ?Colleen?
 ```
 
-Lucene syntax offers two flavours of wildcards; the "*" represents multiple wildcard characters, the "?" denotes a 
-single character wildcard. So the first example above returns all datasets with the investigators field containing 
-"Colleen", surrounded by any number of characters, whereas the second returns datasets with "Colleen" preceded and followed by any single character.  
+Lucene syntax offers two flavours of wildcards; the "*" represents multiple wildcard characters, the "?" denotes a single character wildcard. So the first example above returns all datasets with the investigators field containing  "Colleen", surrounded by any number of characters, whereas the second returns datasets with "Colleen" preceded and followed by any single character.  
 
 
 __Operators AND/OR__:
