@@ -6,7 +6,7 @@ as well as managing submissions and users.
 
 Both options offer the same functions. If you just want to apply one or more of these functions,
 the command line interface (CLI) will suit your needs. Otherwise, use the OCDB API in Python scripts
-to integrate OCDB API functions together with other Python methods.
+to integrate OCDB API functions together with other Python tasks.
 
 
 ## Installation
