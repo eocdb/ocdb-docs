@@ -42,7 +42,7 @@ The following headers are required to be pass validation check
 
 * **water_depth** Water depth at the measuring point (in meters). If not known, set it to _NA_.
 
-* __missing__ Value (only one!) used as a numeric placeholder for any missing data in the data file. This value a non-zero number, e.g. -9999. If your file includes below_detection_limit and above_detection_limit  values are also provided (obsolete), please set them to different values then missing.
+* __missing__ Value (only one!) used as a numeric placeholder for any missing data in the data file. This value should be a non-zero number, e.g. -9999. If your file includes below_detection_limit and above_detection_limit  values are also provided (obsolete), please set them to different values than missing.
 
 * __delimiter__ Indicates how the columns of data are delimited. Accepted delimiters include tab, space, and comma. Only a single (1) delimiter per file.
 
@@ -72,7 +72,7 @@ The following headers are optional. Some of them, if not provided, are added by 
 
 * **station** The name of the station where measurements in the file were collected.
 
-* **data_file_name** The name of the data file submitted. Added by OCDB staff during submission processing if not provided. 
+* **data_file_name** The name of the data file submitted. <!-- Added by OCDB staff during submission processing if not provided. -->
 
 * **data_status** The condition, or status, of the data file. The value _preliminary_ is used when the data are new and the investigator intends to analyze the data further. The value _update_ indicates the data are being resubmitted and informs users that an additional resubmission will occur in the future. The value final is used when the investigator has no intention of revisiting the data set. Recommended
 
