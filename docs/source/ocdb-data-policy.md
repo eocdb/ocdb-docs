@@ -1,6 +1,6 @@
 # Copernicus OCDB Data Policy 
 
-This Copernicus OCDB provides stewardship and welcomes submissions of fiducial-reference in situ data from various providers (hereafter the Principle Investigators (PIs)).
+This Copernicus OCDB provides stewardship and welcomes submissions of bio-optical in situ data from various providers (hereafter the Principle Investigators (PIs)).
 
 __The following conditions must be observed when using the Copernicus OCDB data:__
 - When using the Copernicus OCDB data, you are required to contact the PI about your data usage.
