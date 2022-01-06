@@ -31,10 +31,11 @@ The table below lists acceptable suffixes to modify field names. They must be ap
 
 ```eval_rst
 
-.. csv-table:: Filed suffixes
+.. csv-table:: Field suffixes
    :header: Field_suffix,Units,Description
    :widths: 30, 30, 100
    :stub-columns: 1
+   :delim: ;
 
    _abun; cell/L; Cell abundance for a particular (phytoplankton) taxonomic type
    _biovol; m^3/L; Bio-volume for a particular (phytoplankton) taxonomic type
