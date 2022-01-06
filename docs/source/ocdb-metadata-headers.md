@@ -10,11 +10,13 @@ The following headers are required to be pass validation check
 * __investigators__ Full name of the contributor(s) of the data file. Principal investigator is listed first. Format: Name_Surname.
 <!-- A list of investigators already present in ocdb is available [here](ocdb-PI-affiliation-experiment-cruise.md/#investigators). -->
 
-* __affiliations__ All investigator affiliations list. Format: Full_affiliation_name. Please do not exceed 25 characters. A list of existing affiliations already in ocdb is available [here](ocdb-PI-affiliation-experiment-cruise.md/#affiliations). 
+* __affiliations__ All investigator affiliations list. Format: Full_affiliation_name. Please do not exceed 25 characters.
+<!-- A list of existing affiliations already in ocdb is available [here](ocdb-PI-affiliation-experiment-cruise.md/#affiliations). -->
 
 * __contact__ An email address for one of the investigator(s) or a point of contact for the data file. 
 
-* __experiment__ Full name long-term research project or funding program. It should be the same used in submission path. Please do not exceed 25 characters. A list of existing experiments already in ocdb is available [here](ocdb-PI-affiliation-experiment-cruise.md/#experiments). 
+* __experiment__ Full name long-term research project or funding program. It should be the same used in submission path. Please do not exceed 25 characters.
+<!-- A list of existing experiments already in ocdb is available [here](ocdb-PI-affiliation-experiment-cruise.md/#experiments). -->
 
 * __cruise__ The name of the specific cruise (or subset of the experiment) to which measurements are releted to. Please do not exceed 25 characters. A list of existing cruises already in ocdb is available [here](ocdb-PI-affiliation-experiment-cruise.md/#cruises).
 
