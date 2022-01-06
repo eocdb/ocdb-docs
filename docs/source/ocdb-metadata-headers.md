@@ -18,7 +18,7 @@ The following headers are required to be pass validation check
 * __experiment__ Full name long-term research project or funding program. It should be the same used in submission path. Please do not exceed 25 characters.
 <!-- A list of existing experiments already in ocdb is available [here](ocdb-PI-affiliation-experiment-cruise.md/#experiments). -->
 
-* __cruise__ The name of the specific cruise (or subset of the experiment) to which measurements are related to. Please do not exceed 25 characters. A list of existing cruises already in ocdb is available [here](ocdb-PI-affiliation-experiment-cruise.md/#cruises).
+* __cruise__ The name of the specific cruise (or subset of the experiment) to which measurements are related to. Please do not exceed 25 characters. <!-- A list of existing cruises already in ocdb is available [here](ocdb-PI-affiliation-experiment-cruise.md/#cruises). -->
 
 * __documents__ Comma separated list of documents provided during the submission process, related to the measurements included in the file.
 
