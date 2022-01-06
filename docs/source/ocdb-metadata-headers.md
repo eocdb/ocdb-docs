@@ -76,11 +76,11 @@ The following headers are optional. Some of them, if not provided, are added by 
 
 * **data_status** The condition, or status, of the data file. The value _preliminary_ is used when the data are new and the investigator intends to analyze the data further. The value _update_ indicates the data are being resubmitted and informs users that an additional resubmission will occur in the future. The value final is used when the investigator has no intention of revisiting the data set. Recommended
 
-* **identifier_product_doi** The DOI (Digital Object Identifier; see http://www.doi.org/) associated with the experiment or the Dataset, if availabe
+* **identifier_product_doi** The DOI (Digital Object Identifier; see [http://www.doi.org/](http://www.doi.org/) associated with the experiment or the Dataset, if availabe
 
 * **wavelength_option** Set to hyperspectral or multispectral. Required for products that have an associated wavelength.
 
-* **instrument_model** Comma seprataed list of the model of the instruments whose measurements are being reported. Replace any spaces in the names with underscores. Recommended.
+* **instrument_model** Comma separated list of the model of the instruments whose measurements are being reported. Replace any spaces in the names with underscores. Recommended.
 
 * **instrument_manufacturer** Comma seprataed list of the instrument manufacturers of the measurements that are being reported (e.g., Biospherical_Instruments_Inc.) Replace any spaces in the name with underscores. Recommended.
 
@@ -94,9 +94,9 @@ The following headers are optional. Some of them, if not provided, are added by 
 
 * **wind_speed** The wind speed at the station where the data were collected (in meters per second). It could be also provided as a data field (field name: 'wind'). Recommended.   
 
-
+<!--
 ## Headers added by OCDB staff
-The following fields (marked as obsolete in the vaildation rules) are added and managed by OCDB staff.
+The following fields (marked as obsolete in the validation rules) are added and managed by OCDB staff.
 * **received** Date when the file has been submitted into the Database by investigators
 * **processed** Date when the file has been processed and published into the Database
-
+-->
