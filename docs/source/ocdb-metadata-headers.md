@@ -7,7 +7,8 @@ Note that some optional headers are recommended: they are used to perform measur
 
 The following headers are required to be pass validation check
 
-* __investigators__ Full name of the contributor(s) of the data file. Principal investigator is listed first. Format: Name_Surname. A list of investigators already present in ocdb is available [here](ocdb-PI-affiliation-experiment-cruise.md/#investigators).
+* __investigators__ Full name of the contributor(s) of the data file. Principal investigator is listed first. Format: Name_Surname.
+<!-- A list of investigators already present in ocdb is available [here](ocdb-PI-affiliation-experiment-cruise.md/#investigators). -->
 
 * __affiliations__ All investigator affiliations list. Format: Full_affiliation_name. Please do not exceed 25 characters. A list of existing affiliations already in ocdb is available [here](ocdb-PI-affiliation-experiment-cruise.md/#affiliations). 
 
