@@ -15,7 +15,7 @@ How to update the OCDB ReadTheDocs:
 
 2. After editing any ReadTheDocs page, please ... .
 
-Can we refer to https://gitlab.eumetsat.int/OC/External/OC-DB/ocdb-services/-/blob/master/README.md => validation_config.json here?
+
 
 >Copyright (C) 2019 Copernicus/EUMETSAT  
 >
