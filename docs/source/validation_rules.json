@@ -973,7 +973,7 @@
       "unit_error": "@field_has_wrong_unit"
     },
     {
-      "name": "chl_ex",
+      "name": "chl_experiment",
       "unit": "mg/m^3,ug/l",
       "lower_bound": 0,
       "upper_bound": 100,
@@ -1662,7 +1662,7 @@
     },
     {
       "name": "lsky",
-      "unit": "uW/cm^2/nm,uWcm-2nm-1",
+      "unit": "uW/cm^2/nm/sr,uWcm-2nm-1sr-1",
       "lower_bound": 0,
       "data_type": "number",
       "value_error": "@field_out_of_bounds",
@@ -1670,13 +1670,13 @@
     },
     {
       "name": "lt",
-      "unit": "uW/cm^2/nm,uWcm-2nm-1",
+      "unit": "uW/cm^2/nm/sr,uWcm-2nm-1sr-1",
       "data_type": "number",
       "unit_error": "@field_has_wrong_unit"
     },
     {
       "name": "lu",
-      "unit": "uW/cm^2/nm,uWcm-2nm-1",
+      "unit": "uW/cm^2/nm/sr,uWcm-2nm-1sr-1",
       "lower_bound": -0.001,
       "upper_bound": 5.0,
       "data_type": "number",
@@ -1697,7 +1697,7 @@
     },
     {
       "name": "lw",
-      "unit": "uW/cm^2/nm,uWcm-2nm-1",
+      "unit": "uW/cm^2/nm/sr,uWcm-2nm-1sr-1",
       "lower_bound": -0.001,
       "upper_bound": 5.0,
       "data_type": "number",
@@ -1705,8 +1705,15 @@
       "unit_error": "@field_has_wrong_unit"
     },
     {
+      "name": "lw_unc",
+      "unit": "uW/cm^2/nm/sr,uWcm-2nm-1sr-1",
+      "data_type": "number",
+      "value_error": "@field_out_of_bounds",
+      "unit_error": "@field_has_wrong_unit"
+    },
+    {
       "name": "lwn",
-      "unit": "uW/cm^2/nm,uWcm-2nm-1",
+      "unit": "uW/cm^2/nm/sr,uWcm-2nm-1sr-1",
       "lower_bound": -0.001,
       "data_type": "number",
       "value_error": "@field_out_of_bounds",
@@ -1714,7 +1721,7 @@
     },
     {
       "name": "lwnex",
-      "unit": "uW/cm^2/nm,uWcm-2nm-1",
+      "unit": "uW/cm^2/nm/sr,uWcm-2nm-1sr-1",
       "lower_bound": -0.001,
       "data_type": "number",
       "value_error": "@field_out_of_bounds",
@@ -1861,8 +1868,8 @@
       "unit_error": "@field_has_wrong_unit"
     },
     {
-      "name": "nanoeukaryote_ug/l",
-      "unit": "m^3/l",
+      "name": "nanoeukaryote_carbon",
+      "unit": "ug/l",
       "data_type": "number",
       "unit_error": "@field_has_wrong_unit"
     },
@@ -1884,7 +1891,7 @@
     },
     {
       "name": "nccb",
-      "unit": "nmol/m^2/hr",
+      "unit": "mmol/m^2/d",
       "lower_bound": 0,
       "data_type": "number",
       "value_error": "@field_out_of_bounds",
@@ -1892,7 +1899,7 @@
     },
     {
       "name": "ncpb",
-      "unit": "nmol/m^2/hr",
+      "unit": "mmol/m^2/d",
       "lower_bound": 0,
       "data_type": "number",
       "value_error": "@field_out_of_bounds",
@@ -1900,7 +1907,7 @@
     },
     {
       "name": "nh4",
-      "unit": "nmol/m^3",
+      "unit": "mmol/m^3",
       "lower_bound": 0,
       "data_type": "number",
       "value_error": "@field_out_of_bounds",
@@ -1908,7 +1915,7 @@
     },
     {
       "name": "no2",
-      "unit": "nmol/m^3",
+      "unit": "mmol/m^3",
       "lower_bound": 0,
       "data_type": "number",
       "value_error": "@field_out_of_bounds",
@@ -1916,7 +1923,7 @@
     },
     {
       "name": "no2_no3",
-      "unit": "nmol/m^3",
+      "unit": "mmol/m^3",
       "lower_bound": 0,
       "data_type": "number",
       "value_error": "@field_out_of_bounds",
@@ -1924,7 +1931,7 @@
     },
     {
       "name": "no3",
-      "unit": "nmol/m^3",
+      "unit": "mmol/m^3",
       "lower_bound": 0,
       "data_type": "number",
       "value_error": "@field_out_of_bounds",
@@ -1996,7 +2003,7 @@
     },
     {
       "name": "pc",
-      "unit": "mg/m^3",
+      "unit": "mmol/m^3",
       "lower_bound": 0,
       "data_type": "number",
       "value_error": "@field_out_of_bounds",
