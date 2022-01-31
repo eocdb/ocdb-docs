@@ -1708,7 +1708,6 @@
       "name": "lw_unc",
       "unit": "uW/cm^2/nm/sr,uWcm-2nm-1sr-1",
       "data_type": "number",
-      "value_error": "@field_out_of_bounds",
       "unit_error": "@field_has_wrong_unit"
     },
     {
@@ -2971,7 +2970,7 @@
       "name": "year",
       "unit": "yyyy",
       "lower_bound": 1975,
-      "upper_bound": 2019,
+      "upper_bound": 2022,
       "data_type": "number",
       "value_error": "@field_out_of_bounds",
       "unit_error": "@field_has_wrong_unit"

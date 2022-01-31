@@ -161,7 +161,8 @@ Field Name|Units|Description
  Lu|uW/cm^2/nm/sr|Upwelling radiance 
  LuGND|volts|Dark current values for Lu sensor 
  Lut|mg/m^3|HPLC Lutein 
- Lw|uW/cm^2/nm/sr|Water leaving radiance 
+ Lw|uW/cm^2/nm/sr|Water leaving radiance
+ Lw_unc|uW/cm^2/nm/sr|Accumulated estimate of standard uncertainty associated with the derivation of water leaving radiance (Lw) via error propagation through the air-water interface.
  Lwn|uW/cm^2/nm/sr|Normalized water leaving radiance ( Lwn = Lw * F0 / Es ) 
  Lwnex|uW/cm^2/nm/sr|Exact normalized water leaving radiance ( e.g., Morel et al. 2002 ) 
  Lyco|mg/m^3|HPLC Lycopene 
