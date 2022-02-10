@@ -26,8 +26,7 @@ or by drawing a polygon on the map.
 
 ### Advanced options
 
-In advanced options menu, __single products__ can be selected (a list of standard names for variables is available
-[here](ocdb-standard-field-unit.md)).
+In advanced options menu, user can select a __single products__ to be used as search criteria (a list of standard names for variables is available [here](ocdb-standard-field-unit.md)).
 The wavelength option allows to filter __hyperspectral__ and __multispectral__ measurements. __Water depth__ threshold
 can also be set (when provided in metadata). Finally, measurements taken in optically shallow waters can be either
 excluded or selected. 
