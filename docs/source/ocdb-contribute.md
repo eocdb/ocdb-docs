@@ -13,7 +13,7 @@ For data submission policy please refers to the [Applicable Data Policies](ocdb-
 
 ## Data Format
 
-In the data submission process, any file is automatically checked for its own format and completeness (validation confiuration and the list of rules can be found respectively in [Validation configuration](ocdb-validation-config.md) chapter and in the jason file validation_rules.json).
+In the data submission process, any file is automatically checked for its own format and completeness (validation configuration and the list of rules can be found respectively in [Validation configuration](ocdb-validation-config.md) chapter and in the JSON file validation_rules.json).
 
 * Submitted data files need to be two-dimensional ASCII text files
 * Data are preceded by metadata headers. The list of optional and requested metadata headers is available [here](ocdb-metadata-headers.md)
