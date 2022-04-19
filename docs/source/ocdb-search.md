@@ -41,7 +41,7 @@ investigators: *Colleen* AND start_date: '2016-04-01'
 investigators: *Colleen* OR investigators: *Helge*
 ```
 
-These operators allow to combine conditions. As expected, the "AND" implements a logical AND, the "OR" represents the logical OR operation.
+These operators allow to combine conditions. As expected, the "AND" implements a logical AND, the "OR" represents the logical OR operation. Please note that the operators AND and OR must be written in **upper** case.
 
 __Operators Lower/Greater Than__:
 
@@ -49,6 +49,13 @@ __Operators Lower/Greater Than__:
 water_depth: > 10
 water_depth: < 10
 ```
+
+__Operator TO to search for ranges__:
+
+```
+received: ["20191104" TO "20191108"]
+```
+Please note that the operator TO and OR must be written in **upper** case
 
 Allows to search for datasets where a field is greater that or smaller than a reference. For number fields the functionality is obvious. 
 When applying the operator to String fields, alphanumerical comparisons are used (i.e. C>B is TRUE).
