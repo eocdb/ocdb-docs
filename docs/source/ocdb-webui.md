@@ -70,23 +70,20 @@ Click on _SUBMIT_ to initiate the validation process. Files containing measureme
 Submissions containing errors are not further processed into the Database.
 
 Click on ![](static/webui/list.png)
-_List Files_ available among _Actions_ tools to open a dialog listing all data and documentation files and showing the results of the
-validation, shown for each file:
 
 In case of errors or warnings, for each submission, click on ![](static/webui/list.png)
-_List Files_. Then scroll to the end of the page, where a list of the uploaded files
-will appear:
+_List Files_ to open a dialog listing all data and documentation files and showing the results of the
+validation, shown for each file:
 
 ![](static/webui/list_ex.png)
 
-Click on ![](static/webui/list.png) _List import Issues_ to show
-the list of error and warning messages, e. g.:
+Click on ![](static/webui/list.png) _List import Issues_ to show the list of error and warning messages, e. g.:
 
 ![](static/webui/list_import_issues_dlg.png)
 
 If you need assistance, please contact ops@eumetsat.int indicating the identifier (_Submission label_) of the submission.
 
-Single files can be thus downloaded ![](static/webui/download.png) and re-uploaded ![](static/webui/upload.png) and
+Using the action tools Single files can be thus downloaded ![](static/webui/download.png) and re-uploaded ![](static/webui/upload.png) and
 validated again.
 
 If the validation succeeds, the status of the submission is set to _VALIDATED_ and further processed by Database
