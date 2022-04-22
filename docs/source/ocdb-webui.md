@@ -70,9 +70,8 @@ In case of errors, the status of the submission is set to _SUBMITTED_.
 ![](static/webui/submission.png)
 
 Submissions containing errors are not further processed into the Database.
-In case of errors or warnings, for each submission, click on ![](static/webui/list.png)
-_List Files_ to open a dialog listing all data and documentation files and showing the results of the
-validation, shown for each data file:
+
+In case of errors or warnings, for each submission, click on ![](static/webui/list.png) _List Files_ to open a dialog listing all data and documentation files and showing the results of the validation, shown for each data file:
 
 ![](static/webui/list_ex.png)
 
