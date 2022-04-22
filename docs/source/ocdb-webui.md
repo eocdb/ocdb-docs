@@ -55,35 +55,34 @@ multiple submissions.
 
 ![](static/webui/submission_dialog.png)
 
-Clicking on _Publish Data_ the user agrees to publish the data right after the submission and the quality check process. 
+Clicking on _Publish Data_ the user agrees to publish the data. After the submission and the quality check process, as soon as the data will be processed into the OCDB by an OCDB administrator, submissions become publically available, if agreed by the user.
 Selecting a date in _Publication Date_ will delay the publication of the data belonging to this submission. 
 Data for which the publication is not agreed are ingested into the Database but accessible only to the Database
-administrators and the owner of the data. An agreement to publish can also be provided anytime in the future by
+administrators and the owner of the data. An agreement to publish can also be provided or rejected anytime in the future by
 contacting ops@eumetsat.int.
 
-Drag and Copy or Select measurement files and documentation in the dedicated windows.
+Drag and drop or select measurement and documentation files in the dedicated windows.
 File format and documentation required are described [here](ocdb-contribute.md).
-Click on _SUBMIT_ to initiate the validation process. Files containing measurements are immediately automatically checked according to [validation rules](ocdb-validation-config.md). In case of errors, the status of the submission is set to _SUBMITTED_.
+Click on _SUBMIT_ to initiate the validation process. Files containing measurements are immediately automatically checked according to [validation rules](ocdb-validation-config.md).
+
+In case of errors, the status of the submission is set to _SUBMITTED_.
 
 ![](static/webui/submission.png)
 
 Submissions containing errors are not further processed into the Database.
-
-Click on ![](static/webui/list.png)
-
 In case of errors or warnings, for each submission, click on ![](static/webui/list.png)
 _List Files_ to open a dialog listing all data and documentation files and showing the results of the
-validation, shown for each file:
+validation, shown for each data file:
 
 ![](static/webui/list_ex.png)
 
-Click on ![](static/webui/list.png) _List import Issues_ to show the list of error and warning messages, e. g.:
+In the dialog click on ![](static/webui/list.png) _List import Issues_ to show the list of error and warning messages, e. g.:
 
 ![](static/webui/list_import_issues_dlg.png)
 
 If you need assistance, please contact ops@eumetsat.int indicating the identifier (_Submission label_) of the submission.
 
-Using the action tools Single files can be thus downloaded ![](static/webui/download.png) and re-uploaded ![](static/webui/upload.png) and
+Using the __action tools__ single files can be thus downloaded ![](static/webui/download.png) and re-uploaded ![](static/webui/upload.png) and
 validated again.
 
 If the validation succeeds, the status of the submission is set to _VALIDATED_ and further processed by Database
