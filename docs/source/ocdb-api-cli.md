@@ -324,8 +324,12 @@ Any user can update his own password, after login.
 
 cli:
 ```bash
-ocdb-cli user ownpwd -op <old password> -p <new password>
+ocdb-cli user pwd
 ```
+
+Screenshot:
+
+
 
 python:
 ```bash
