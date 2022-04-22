@@ -47,7 +47,7 @@ Monthly, MDB files are genereted through a Python module (called MDB_Builder).
 
 The diagram below shows at high level the workflow followed in order to build MDB files.
 
-![](static/webui/mdb_flow.png)
+![](static/webui/cli_change_own_password.png)
 
 ### Preparing OLCI data
 OLCI Level-1 and Level-2 FR NTC products are systematically extracted over AERONET-OC sites and MOBY position (the second one, updated on a daily basis), stored as a single NetCDF files (one for each extraction).
