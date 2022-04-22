@@ -329,7 +329,7 @@ ocdb-cli user pwd
 
 Screenshot:
 
-
+![](static/webui/cli_change_own_password.png)
 
 python:
 ```bash
