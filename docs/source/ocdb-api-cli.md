@@ -247,7 +247,7 @@ python:
 api.add_user(username='<user_name>', password='<passwd>', email='<email>', roles=['<role1>, <role2>'])
 ```
 
-Arguments username, password, email and roles are mandatory. <role> could be either 'submit' (for any users) or 'admin' (for admin users only).
+Arguments username, password, email and roles are mandatory. _role_ could be either 'submit' (for any users) or 'admin' (for admin users only).
 
 
 __Get User Information__ (admin only):
