@@ -244,10 +244,10 @@ ocdb-cli user add -u <user_name> -p <password> -fn <user's first name> -ln <user
 
 python:
 ```python
-api.add_user(username='<user_name>', password='<passwd>', roles=['<role1>, <role2>'])
+api.add_user(username='<user_name>', password='<passwd>', email='<email>', roles=['<role1>, <role2>'])
 ```
 
-<role1> could be either 'submit' (for any users) or 'admin' (for admin users only).
+Arguments username, password, email and roles are mandatory. <role> could be either 'submit' (for any users) or 'admin' (for admin users only).
 
 
 __Get User Information__ (admin only):
