@@ -1,11 +1,11 @@
 # Matchup Database files
-Matchups Database (MDB) netCDF files, including matchups between OLCI and _in situ_ data from AERONET-OC network, MOBY buoy or downloaded from Copernicus OCDB or NAA SeaBASS Databases.
+Matchups Database (MDB) netCDF files, including matchups between OLCI and *in situ* data from AERONET-OC network, MOBY buoy or downloaded from Copernicus OCDB or NAA SeaBASS Databases.
 
 MDB files are provided through FTP, directly accesible from the Copernicus OCDB webpage.
 
 For AERONET-OC and MOBY they are organised by site and updated on a monthly basis. Please refer to MDB attributes 'creation_date' and 'version'  to check which is the latest version available (only the latest version is available at FTP site).
 
-For _in-situ_ data downloaded from OCDB or SeaBASS, they are organised by products.
+For *in-situ* data downloaded from OCDB or SeaBASS, they are organised by products.
 
 A short description of the content as well as the format follows.
 
@@ -18,15 +18,15 @@ Each MDB file contains:
 
 - For Level-2 MDB only: BRDF factors provided to retrieve original directional reflectance of OLCI products
 
-- _In-situ_ measurements available for each point/site within **24 hours** OLCI acquisition
+- *In-situ* measurements available for each point/site within **24 hours** OLCI acquisition
 
 - For AERONET-OC MDB only: all original Version 3 data from AERONET-OC network
 
 - For MOBY MDB only: MOBY data (when available, from top and middle arms and from top and bottom arms measurements), generated through concolutiona and band-shifting to nominal OLCI bands, from hypespectral data
 
-- Fully normalized _in-situ_ Rrs at OLCI nominal bands obtained through **band-shifting** (when Δλ>1 in the visible) and BRDF correction, when not applied already at source
+- Fully normalized *in-situ* Rrs at OLCI nominal bands obtained through **band-shifting** (when Δλ>1 in the visible) and BRDF correction, when not applied already at source
 
-- _in-situ_ measurements for cruises (chlorophyll HPLC or TSM or ADG443 or KD490 or Rrs or selected fluorometrically/spectrophotometrically derived chl-a), quality checked and optically weighted in case of profiles
+- *in-situ* measurements for cruises (chlorophyll HPLC or TSM or ADG443 or KD490 or Rrs or selected fluorometrically/spectrophotometrically derived chl-a), quality checked and optically weighted in case of profiles
 
 Note that MDB content is **extended** beyond the data required for the baseline validations. The goal is to facilitate any additional investigation.
 Users have to apply their own analyses to extract matchups, that are not screened neither for pixel validity nor applying any other criteria than the 24 hour time difference limit.
@@ -39,7 +39,7 @@ where:
 - SATELLITE: S3A or S3B
 - SENSOR: OLCI
 - LEVEL indicates OLCI products level: 'L1' for EFR products or 'L2' for WFR products
-- TYPE indicates _in-situ_ data type: 'AERONET', 'MOBY', 'HPLC' (for chlorophyll HPLC measurements only), 'KD490', 'TSM', 'ADG', or CHL (for fluorometrically/spectrophotometrically derived chl-a) 
+- TYPE indicates *in-situ* data type: 'AERONET', 'MOBY', 'HPLC' (for chlorophyll HPLC measurements only), 'KD490', 'TSM', 'ADG', or CHL (for fluorometrically/spectrophotometrically derived chl-a) 
 - SITE (for AERONET-OC MDB only) indicates AERONET-OC site
 
 ## MDB files preparation
@@ -51,8 +51,8 @@ The diagram below shows at high level the workflow followed in order to build MD
 
 ### Preparing OLCI data
 OLCI Level-1 and Level-2 FR NTC products are systematically extracted over AERONET-OC sites and MOBY position (the second one, updated on a daily basis), stored as a single NetCDF files (one for each extraction).
-The extraction is also performed occasionally, based on _in-situ_ measurement time and location, derived from SeaBASS and Copernicus OCDB Databases.
-If for an extraction exists at least one _in-situ_ measurement within 24 hours before and after its acquisition time, the extraction is included in the MDB.
+The extraction is also performed occasionally, based on *in-situ* measurement time and location, derived from SeaBASS and Copernicus OCDB Databases.
+If for an extraction exists at least one *in-situ* measurement within 24 hours before and after its acquisition time, the extraction is included in the MDB.
 NetCDF files contain all the original products excepted for, for Level-2 MDB files, water reflectance, converted into Rrs, after BRDF correction for the first 11 bands. BRDF factors are retrieved using the same algorithm implemented in OLCI Level-2 Ocean Colour algorithm (chlorophyll concentration based), using Look-Up Tables (LUTs) provided in S3A Ocean colour parameters (OCP) Auxiliary Data File (ADF). Iteration is not required, since CHL_OC4ME product is used as input.
 
 ### Preparing in situ data: AERONET-OC
@@ -77,7 +77,7 @@ Band shifting is then applied, based on Mélin and Sclep (2015) work.
 Equation 2: Rrs(λ) = Lw(λ)/Ed(λ) * BRDF(λ)
 ```
 
-BRDF factors are retrieved using the same algorithm implemented in OLCI Level-2 Ocean Colour algorithm (chlorophyll concentration based), using Look-Up Tables (LUTs) provided in S3A Ocean colour parameters (OCP) Auxiliary Data File (ADF). For the calculation of BRDF factors, wind speed provided in OLCI products is used (the mean values for the 25*25 pixels extraction); solar position is obtained by MOBY measurement time and location through _astropy_ Python package (Price-Whelan et al., 2018); chlorophyll concentration is obtained applying OLCI OC4ME algorithm on Rrs values before BRDF correction. 
+BRDF factors are retrieved using the same algorithm implemented in OLCI Level-2 Ocean Colour algorithm (chlorophyll concentration based), using Look-Up Tables (LUTs) provided in S3A Ocean colour parameters (OCP) Auxiliary Data File (ADF). For the calculation of BRDF factors, wind speed provided in OLCI products is used (the mean values for the 25x25 pixels extraction); solar position is obtained by MOBY measurement time and location through *astropy* Python package (Price-Whelan et al., 2018); chlorophyll concentration is obtained applying OLCI OC4ME algorithm on Rrs values before BRDF correction. 
 
 ## Preparing in situ data: other sources
 Data gathered from other sources (e.g. Copernicus OCDB, SeaBASS) are checekd for protocols complience and quality.
