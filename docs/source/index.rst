@@ -39,5 +39,6 @@ The Database has been designed in order to guarantee easy access to data, a stro
    ocdb-suffix-modifiers
    ocdb-validation-config
    ocdb-data-policy
+   ocdb-PI-affiliation-experiment-cruise
    ocdb-external-data-sources
    ocdb-MDB-user-manual
