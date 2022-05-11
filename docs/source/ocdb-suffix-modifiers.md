@@ -31,15 +31,17 @@ The table below lists acceptable suffixes to modify field names. They must be ap
 
 ```eval_rst
 
-.. csv-table:: Filed suffixes
+.. csv-table:: Field suffixes
    :header: Field_suffix,Units,Description
    :widths: 30, 30, 100
    :stub-columns: 1
+   :delim: ;
 
    _abun; cell/L; Cell abundance for a particular (phytoplankton) taxonomic type
    _biovol; m^3/L; Bio-volume for a particular (phytoplankton) taxonomic type
    _carbon; ug/L; Carbon concentration for a particular (phytoplankton) taxonomic type
    _bincount; none; Number of records averaged into a bin or reported measurement specific to the prefix that _bincount is attached to. The field bincount can simply be used if the bincount applies to all forms of data in the file but this field suffix (i.e. '<field>_bincount') can be used multiple times in the same file for field-specific numbers
+   _quality; none; An analyst-defined quality flag that is relevant to the base field name. A definition of the quality flags should be provided as metadata header comments and within accompanying documentation files.
    _cv; unitless; Coefficient of Variation
    _sd; same as base field's units; Standard Deviation
    _se; same as base field's units; Standard Error

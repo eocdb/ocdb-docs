@@ -4,9 +4,9 @@ All data the submittors have agreed to publish is searchable for the public.
 The OCDB WebUI offers a graphical search interface. Main feature of this interface is the search text field.
 Just entering any __word__ allows also querying the Database for anyfile containing that specific word.
 
-For example typing 'chl Rrs', all the files containing the world 'chl' or 'Rrs' are returned.
+For example typing 'chl Rrs', all the mesurement files containing the word 'chl' or 'Rrs' in the header are returned.
 
-This field also allows using the so-called __Lucene syntax__ which enables you to search for specific field values and also allows chaining. A concise description of the full Lucene query language syntax can be found [here])https://lucene.apache.org/core/2_9_4/queryparsersyntax.html). 
+This field also allows using the so-called __Lucene syntax__ which enables you to search for specific field values and also allows chaining. A concise description of the full Lucene query language syntax can be found [here](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html). 
 
 Please note that the OCDB system does not support the complete syntax.
 
@@ -31,9 +31,7 @@ investigators: *Colleen*
 investigators: ?Colleen?
 ```
 
-Lucene syntax offers two flavours of wildcards; the "*" represents multiple wildcard characters, the "?" denotes a 
-single character wildcard. So the first example above returns all datasets with the investigators field containing 
-"Colleen", surrounded by any number of characters, whereas the second returns datasets with "Colleen" preceded and followed by any single character.  
+Lucene syntax offers two flavours of wildcards; the "*" represents multiple wildcard characters, the "?" denotes a single character wildcard. So the first example above returns all datasets with the investigators field containing  "Colleen", surrounded by any number of characters, whereas the second returns datasets with "Colleen" preceded and followed by any single character.  
 
 
 __Operators AND/OR__:
@@ -43,7 +41,7 @@ investigators: *Colleen* AND start_date: '2016-04-01'
 investigators: *Colleen* OR investigators: *Helge*
 ```
 
-These operators allow to combine conditions. As expected, the "AND" implements a logical AND, the "OR" represents the logical OR operation.
+These operators allow to combine conditions. As expected, the "AND" implements a logical AND, the "OR" represents the logical OR operation. Please note that the operators AND and OR must be written in **upper** case.
 
 __Operators Lower/Greater Than__:
 
@@ -52,8 +50,15 @@ water_depth: > 10
 water_depth: < 10
 ```
 
+__Operator TO to search for ranges__:
+
+```
+received: ["20191104" TO "20191108"]
+```
+Please note that the operator TO and OR must be written in **upper** case
+
 Allows to search for datasets where a field is greater that or smaller than a reference. For number fields the functionality is obvious. 
-When applying the operator to String fields, alphanumerical comparisoins are used (i.e. C>B is TRUE).
+When applying the operator to String fields, alphanumerical comparisons are used (i.e. C>B is TRUE).
 
 __Possible fields are__:
 

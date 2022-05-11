@@ -1,4 +1,4 @@
-Below, affiliations, experimetns, cruises and investigators already present in the Database are listed.
+Below, affiliations, experiments, cruises and investigators already present in the Database are listed.
 
 ## Affiliations
 

@@ -44,14 +44,14 @@ In order to guarantee interoperability with NASA SeaBASS Database, [SeaBASS Stan
    aph, 1/m, Absorption coefficient of phytoplankton 
    aph_unc, 1/m," Accumulated estimate of standard uncertainty associated with the derivation of the absorption coefficient of phytoplankton (aph) via error propagation through the absorption equation. See section 5.3.4 of IOCCG's "" Volume 1: Inherent Optical Property Measurements and Protocols: Absorption Coefficient"" (2018). "
    asrfa, 1/m, Absorption coefficient of Suwanee River Fulvic Acid standard 
-   associated_file_types, none," File type of an associated file. Please contact SeaBASS staff before using this field to verify that your file type is supported. Valid entries for this field are: DNA-FASTQ, DNA-FASTA (for files relating to DNA analysis), BENTHIC (for images relating to benthic type and cover), and PLANKTONIC (for images relating to flow cam imagery or phytoplankton taxonomic types). If multiple entries are applicable, separate them with the pipe character: "
-   associated_files, none," File name of an associated file. Must be used with associated_file_type. Please include the file suffix in the entry. If multiple entries are applicable, separate them with the pipe character: "
+   associated_file_types, none," File type of an associated file. Please contact SeaBASS staff before using this field to verify that your file type is supported. Valid entries for this field are: DNA-FASTQ, DNA-FASTA (for files relating to DNA analysis), BENTHIC (for images relating to benthic type and cover), and PLANKTONIC (for images relating to flow cam imagery or phytoplankton taxonomic types). If multiple entries are applicable, separate them with the pipe character!"
+   associated_files, none," File name of an associated file. Must be used with associated_file_type. Please include the file suffix in the entry. If multiple entries are applicable, separate them with the pipe character: "
    Asta, mg/m^3, HPLC Astaxanthin 
    At, degreesC, Air temperature 
    aw, 1/m, Absorption coefficient of water 
    b, 1/m, Total scattering coefficient (bw + bp) 
    bact_abun, cells/L, Bacterioplankton abundance 
-   bactP, pmol/L/hr   , Bacterioplankton production 
+   bactP, pmol/L/hr, Bacterioplankton production 
    bb, 1/m, Total backscattering coefficient (bbw + bbp) 
    bbp, 1/m, Backscattering coefficient of particles 
    bbp_bp, unitless, Ratio of the backscattering coefficient of particles (bbp) to the total backscattering coefficient (bp) 
@@ -174,6 +174,7 @@ In order to guarantee interoperability with NASA SeaBASS Database, [SeaBASS Stan
    LuGND, volts, Dark current values for Lu sensor 
    Lut, mg/m^3, HPLC Lutein 
    Lw, uW/cm^2/nm/sr, Water leaving radiance 
+   Lw_unc, uW/cm^2/nm/sr, Accumulated estimate of standard uncertainty associated with the derivation of water leaving radiance (Lw) via error propagation through the air-water interface.
    Lwn, uW/cm^2/nm/sr, Normalized water leaving radiance ( Lwn = Lw * F0 / Es ) 
    Lwnex, uW/cm^2/nm/sr," Exact normalized water leaving radiance ( e.g., Morel et al. 2002 ) "
    Lyco, mg/m^3, HPLC Lycopene 
@@ -210,7 +211,7 @@ In order to guarantee interoperability with NASA SeaBASS Database, [SeaBASS Stan
    Oz, dobson, Column Ozone 
    P-457, mg/m^3, HPLC P-457 
    PAR, uE/cm^2/s, PAR measured at the sea surface 
-   PC, mg/m^3, Phycocyanin derived fluorometrically/spectrophotometrically 
+   PC, mmol/m^3, Concentration of Particulate Carbon
    pCO2, uatm, Surface water partial pressure of carbon dioxide 
    pDrift, mbar, Pressure in the drift tube of the PTR-TOF/MS. 
    Perid, mg/m^3, HPLC Peridinin 
@@ -319,7 +320,7 @@ In order to guarantee interoperability with NASA SeaBASS Database, [SeaBASS Stan
    VSF, 1/m/sr," Total volume scattering function (VSF### or VSF###_YYYang, where YYY is collection angle). Also called beta. "
    VSFg, 1/m/sr," Gelbstoff volume scattering function, i.e., VSFg = VSFw - VSF(pure water, salinity, and temperature) (VSFg### or VSFp###_YYYang, where YYY is collection angle). Also called beta. "
    VSFp, 1/m/sr," Particulate volume scattering function i.e., VSFp = VSF - VSFw (VSFp### or VSFp###_YYYang, where YYY is collection angle). Also called beta. "
-   VSFw, 1/m/sr," Filtered seawater volume scattering function plus VSF sal & temp contributions, i.e., VSFw = VSF - VSFp (VSFw### or VSFw###_YYYang, where YYY is collection angle). Also called beta., where YYY is collection angle). Also called beta., where YYY is collection angle). Also called beta. "
+   VSFw, 1/m/sr," Filtered seawater volume scattering function plus VSF sal & temp contributions, i.e., VSFw = VSF - VSFp (VSFw### or VSFw###_YYYang, where YYY is collection angle). Also called beta., where YYY is collection angle). Also called beta., where YYY is collection angle). Also called beta. "
    water_depth, m, The water (bottom) depth where the data were collected 
    waveht, m, Wave height 
    wavelength, nm, Wavelength of measurement 
