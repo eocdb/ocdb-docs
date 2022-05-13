@@ -338,7 +338,7 @@ Screenshot:
 
 python:
 ```bash
-api.change_user_login(<username>,<password>,<new_password>)
+api.change_user_login(username=<username>,password=<password>,new_password=<new_password>)
 ```
 
 *Forgotten password*
