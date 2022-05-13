@@ -179,20 +179,33 @@ api.get_dataset(dataset_id='5d971154f9305e0001c6d700', fmt='pandas')
 
 Commands:
 - __add__     Add a user (see below)
-- __delete__  Delete user by <username> (see below)
+- __delete__  Delete user <username> (see below)
 - __get__     Get user <username> (see below)
-- __list__    List users (ocdb-cli user list)
+- __list__    List all user (ocdb-cli user list)
 - __login__   Login a user (see below)
 - __logout__  Log out current user if logged in (ocdb-cli user logout)
-- __ownpwd__  Set the password for the current user (see below)
-- __pwd__     Set the password for an existing user (see below)
+- __pwd__     Set the password for a user (see below)
 - __update__  Update an existing user (see below)
-- __whoami__  Who am I (ocdb-cli user whoami)
+- __whoami__  Get the current user (see below)
+
+
+__General remarks on CLI syntax__
+
+Command line arguments can be specified by single letters, e. g. -u for username or -p for password or
+as words, such as --password or --username. For details see help for the respective command or subcommand,
+e. g.:
+
+ocdb-cli user --help
+
+or
+
+ocdb-cli user add --help
 
 __Login User__:
 
-The login procedure will ask for a user name and password. You can specify the password
- as an option. However, under normal circumstances we advice to use the command line prompt.
+The login procedure will ask for a user name and a password. You can specify the password 
+as an option. However, under normal circumstances we advice to specify username only and  to 
+use the command line prompt.
 
 The example below will login a user with the user name 'scott'.
 'scott' is a 'submitter' user. 'scott', after login, could
@@ -220,7 +233,7 @@ api.logout_user()
 
 __Who am I?__
 
-To find out whether you are logged in or who is logged in
+To find out whether you are logged in or who is logged in, use:
 
 cli:
 ```bash
@@ -234,23 +247,28 @@ api.whoami_user()
 
 __Add User__ (admin only):
 
-To add a user, specify the required user information
-
+To add a user, specify the required user information. Arguments username, password, email and roles
+are mandatory. _role_ could be either 'submit' (for any users) or 'admin' (for admin users only).
 
 cli:
 ```bash
-ocdb-cli user add -u <user_name> -p <password> -fn <user's first name> -ln <user's family name> -em <user's email> -ph <user's phone number> -r <role>
+ocdb-cli user add -u <user_name> -p <password> -fn <user's first name> -ln <user's family name> -em <user's email> -ph <user's phone number> -r <role(s))>
 ```
+In the command line the value for argument roles shall be written as admin, submit or ['submit','admin'], e.g.:
+```bash
+ocdb-cli user add --username super_user --password super_secret --roles ['submit','admin'] --email super_user@eum.int
+```
+Add further arguments as convenient.
 
 python:
 ```python
 api.add_user(username='<user_name>', password='<passwd>', email='<email>', roles=['<role1>, <role2>'])
 ```
 
-Arguments username, password, email and roles are mandatory. _role_ could be either 'submit' (for any users) or 'admin' (for admin users only).
-
 
 __Get User Information__ (admin only):
+
+Get details of a specific user, except password:
 
 cli:
 ```bash
@@ -264,10 +282,12 @@ api.get_user(username='scott')
 
 Users can request their own information without restrictions.
 
+
 __Delete a User__ (admin only):
 
+Delete a user by specifying the username.
 
-cli:
+cli (do not use key -u or --username!):
 ```bash
 ocdb-cli user delete scott
 ```
@@ -281,13 +301,13 @@ __Update an Existing User__ (admin or the respective user themselves only):
 
 The following fields can be updated:
 
-- name (username)
 - first_name
 - last_name
 - email
 - phone
-- roles
-- id
+- roles (admin only)
+
+Even an admin user cannot change user id.
 
 cli:
 ```bash
@@ -299,24 +319,8 @@ python:
 api.update_user(<user_name>, key=<key>, value=<value>)
 ```
 
-Users can update their own user details without restrictions.
+Users can update their own user details without restrictions. However, they have to specify their user name.
 
-*Forgotten password*
-
-Please contact ServiceDesk@eumetsat.int [Subject: OCDB, forgotten password (username = …)]
-
-*Reset a forgotten password from a user* (admin only)
-
-To recover a user’s password,  use the update_user command as follows:
-
-python:
-
-```bash
-api.update_user(<user_name>, key=’password’, value=<test_password>)
-```
-
-Provide this <test_password> to the user and ask him/her to change
-it immediately.
 
 __Update own password__:
 
@@ -326,6 +330,7 @@ cli:
 ```bash
 ocdb-cli user pwd
 ```
+You will be asked to input your current password and the new password.
 
 Screenshot:
 
@@ -333,17 +338,32 @@ Screenshot:
 
 python:
 ```bash
-api.change_user_login(<username>,<old_password>,<new_password>)
+api.change_user_login(<username>,<password>,<new_password>)
 ```
 
-__Update password of an existing user__
+*Forgotten password*
 
-Admins can update password of other users.
+Please contact ServiceDesk@eumetsat.int [Subject: OCDB, forgotten password (username = …)]
+
+
+__Update password of an existing user (admin only)__
+
+Admins can reset a forgotten password for any user. To recover a user’s password,
+use the pwd command as follows:
 
 cli
 ```bash
-ocdb-cli user pwd -u scott -p <new password>
+ocdb-cli user pwd -u <username> -p <admin password> --new-password <new password>
 ```
+
+python:
+
+```bash
+api.change_user_login(username='scott', password='tiger', new_password='lion')
+```
+
+Provide this <test_password> to the user and ask him/her to change
+it immediately.
 
 
 ## Managing Submissions
