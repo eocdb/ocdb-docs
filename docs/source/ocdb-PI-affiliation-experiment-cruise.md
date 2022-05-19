@@ -1,25 +1,136 @@
-Below, affiliations, experiments, cruises and investigators already present in the Database are listed.
+Below, affiliations, experiments, cruises and investigators already present in the Database are listed (2022-05-19).
 
 ## Affiliations
-- Alfred-Wegener-Institute_Helmholtz_Centre_for_Polar_and_Marine_Research (AWI)
-- Eidgenossische_Anstalt_fur_Wasserversorgung_Abwasserreinigung_und_Gewasserschutz (Eawag)
-- Laboratoire_d_Oceanologie_et_de_Geosciences (LOG)
+- Alfred-Wegener-Institute_Helmholtz_Centre_for_Polar_and_Marine_Research
+- Australian_Institute_of_Marine_Sciences_(AIMS)
+- CSIRO_Land_and_Water_(CLW)
+- CSIRO_Oceans_and_Atmosphere_(O&A)
+- Eidgenossische_Anstalt_fur_Wasserversorgung_Abwasserreinigung_und_Gewasserschutz
+- Instituto_Argentino_de_Oceanografia
+- JRC
+- Laboratoire_d'Oceanographie_de_Villefranche
+- Laboratoire_d_Oceanologie_et_de_Geosciences
+- NOAA
 
 ## Experiments
-- FRontiers in Arctic marine Monitoring (FRAM)
+- AC3,FRAM
+- AERONET-AErosolROboticNETwork
+- ANT
+- ESA_OC-CCI_project
+- IOPstudy
+- Long-term_monitoring_of_the_Great_Barrier_Reef_Reef_Water_Quality_Protection_Plan
+- Lucinda
+- MOBY
+- Monte_Hermoso
 - North_Sea_transect
-
+- Odermatt2007
+- PEACETIME-OC
+- SO
 
 ## Cruises
+- ANT-XXIII-1,ANT-XXVI-4,BIOSOPE,ICESCAPE2010,ICESCAPE2011,MALINA,MURI_KM12,NBP9711,REV9801,REV9802
 - ANT-XXVII-2
+- ARIAKE_TOWER
+- Bahia_Blanca
+- Blyth_NOAH
+- Casablanca_Platform
+- GBRBT_17
+- GBRCBG_17
+- GBRCB_17
+- GBRCCFF_17
+- GBRCR_17
+- GBRCT_15_17
+- GBRDBI_15_17
+- GBRFB_15_17
+- GBRFHI_17
+- GBRGB_15_17
+- GBRGC_17
+- GBRGI_15_17
+- GBRH2_15_17
+- GBRHHC_17
+- GBRHIN_16_17
+- GBRHKI_17
+- GBRHR_17
+- GBRMBI_17
+- GBRNMIHI_17
+- GBRNMI_17
+- GBRNSFI_17
+- GBROR_17
+- GBRPC_17
+- GBRPD_15_17
+- GBRPIRM_17
+- GBRPRM_17
+- GBRRI_17
+- GBRSI_17
+- GBRSP_17
+- GBRTFI_17
+- GBRWHI6_17
+- GBRYK_15_17
+- Galata_Platform
+- Gloria
+- Grizzly_Bay
+- Gustav_Dalen_Tower
 - HE462
+- Helsinki_Lighthouse
+- Ieodo_Station
+- Kemigawa_Offshore
+- LISCO
+- Lake_Erie
+- Lake_Okeechobee
+- Lucinda
+- Lucinda_2010_April
+- Lucinda_2010_Nov
+- Lucinda_2014
+- Lucinda_2015
+- Lucinda_2016
+- Lucinda_2017
+- Lucinda_2018
+- MVCO
+- PEACETIME
 - PS106
-- SO234
+- PS99
+- Palgrunden
+- Pescadores
 - SO235
 - SO243
-
+- Section-7_Platform
+- Socheongcho
+- South_Greenbay
+- Thornton_C-power
+- USC_SEAPRISM
+- USC_SEAPRISM_2
+- Venise
+- WaveCIS_Site_CSI_6
+- Zeebrugge-MOW1
+- Zurich_Geneva
 
 ## Investigators
-- Bracher Astrid (Astrid_Bracher)
-- Loisel Hubert (Hubert_Loisel)
-- Odermatt Daniel (Daniel_Odermatt)
+- AlanWeidemann,BillGibson,RobertArnone
+- Ana_Laura_Delgado
+- Astrid_Bracher
+- Brent_Holben
+- Daniel_Odermatt
+- DimitryVanderZande
+- ESA_CCI_consortium_and_insitu_data_PIs
+- GiuseppeZibordi_MarcoTalone
+- Giuseppe_Zibordi
+- Hubert_Loisel
+- HuiFeng_HeidiM.Sosik
+- JojiIshizaka_KoheiArai
+- Julia Uitz
+- Ken_Voss
+- NickTufillaro
+- NimaPahlevan
+- RodneyForster
+- SamAhmed_AlexGilerson
+- Schaffelke_Britta
+- Schroeder_Thomas
+- Schroeder_Thomas;_Brando_Vittorio
+- SusanneKratzer
+- TimMoore_SteveRuberg_MenghuaWang
+- Young-JePark
+- Young-JePark_Hak-YeolYou
+- TimMoore,SteveRuberg,MenghuaWang
+- Yangyang_Liu
+- Young-JePark
+- Young-JePark,Hak-YeolYou
