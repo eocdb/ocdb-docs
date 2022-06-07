@@ -1,8 +1,8 @@
 Below, affiliations, experiments, cruises and investigators already present in the Database are listed (2022-05-19).
 
 ## Investigators
-- Astrid_Bracher
-- Daniel_Odermatt
+- Astrid Bracher
+- Daniel Odermatt
 - Julia Uitz
 
 ## Affiliations
