@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to the Copernicus OCDB Database System (OCDB)!
+Welcome to the Copernicus Ocean Colour Database (OCDB) System!
 ======================================================
 Comparison between simultaneous in-situ and satellite measurements are fundamental for satellite product validation,
 to prove the accuracy and limitations of the data services.
