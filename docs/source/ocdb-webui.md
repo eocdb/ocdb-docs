@@ -26,7 +26,7 @@ or by drawing a polygon on the map.
 
 ### Advanced options
 
-In advanced options menu, user can select a __single products__ to be used as search criteria (a list of standard names for variables is available [here](ocdb-standard-field-unit.md)).
+In advanced options menu, user can select a __single product__ to be used as search criteria (a list of standard names for variables is available [here](ocdb-standard-field-unit.md)).
 The wavelength option allows to filter __hyperspectral__ and __multispectral__ measurements. __Water depth__ threshold
 can also be set (when provided in metadata). Finally, measurements taken in optically shallow waters can be either
 excluded or selected. 
@@ -47,7 +47,7 @@ Registered users after login in can manage new and past submission in the _Submi
 
 ### New Submission
 
-To add a __new submission__, click on _NEW SUBMISSION_ in the top right corner.
+To add a __new submission__, go to _Submit_ page and click on _NEW SUBMISSION_ in the top left corner.
 A new dialog will open. Please add an identifier (_Submission Label_) for the submission and a path
 (_affiliation/experiment/cruise_) where submission files will be stored under.
 The submission label must univocally refer to the submission, while submission path could be the same for
@@ -55,7 +55,7 @@ multiple submissions.
 
 ![](static/webui/submission_dialog.png)
 
-Clicking on _Publish Data_ the user agrees to publish the data. After the submission and the quality check process, as soon as the data will be processed into the OCDB by an OCDB administrator, submissions become publically available, if agreed by the user.
+By clicking on _Publish Data_ the user agrees to publish the data. After going through an automated quality check and being processed by an OCDB administrator (admin action _Process Submission into DB_), submissions become publically available.
 Selecting a date in _Publication Date_ will delay the publication of the data belonging to this submission. 
 Data for which the publication is not agreed are ingested into the Database but accessible only to the Database
 administrators and the owner of the data. An agreement to publish can also be provided or rejected anytime in the future by
@@ -128,7 +128,7 @@ __Delete Submission__ (Admin users only):
 
 The whole submission is deleted, including processed/published data from the database.
  
-__Halt Restart Submission__:
+__Halt/Restart Submission__ (Admin users only):
 
 ![](static/webui/play.png)
 
