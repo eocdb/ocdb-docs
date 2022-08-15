@@ -22,7 +22,7 @@ Each MDB file contains:
 
 - For AERONET-OC MDB only: all original Version 3 data from AERONET-OC network
 
-- For MOBY MDB only: MOBY data (when available, from top and middle arms and from top and bottom arms measurements), generated through concolutiona and band-shifting to nominal OLCI bands, from hypespectral data
+- For MOBY MDB only: MOBY data (when available, from top and middle arms and from top and bottom arms measurements), generated through convolution and band-shifting to nominal OLCI bands, from hypespectral data
 
 - Fully normalized *in-situ* Rrs at OLCI nominal bands obtained through **band-shifting** (when Δλ>1 in the visible) and BRDF correction, when not applied already at source
 
