@@ -252,7 +252,7 @@ are mandatory. _role_ could be either 'submit' (for any users) or 'admin' (for a
 
 cli:
 ```bash
-ocdb-cli user add -u <user_name> -p <password> -fn <user's first name> -ln <user's family name> -em <user's email> -ph <user's phone number> -r <role(s))>
+ocdb-cli user add -u <user_name> -p <password> -fn <user's first name> -ln <user's family name> -em <user's email> -ph <user's phone number> -r <role1> -r <role2>
 ```
 In the command line the value for argument roles shall be written as admin, submit or ['submit','admin'], e.g.:
 ```bash
