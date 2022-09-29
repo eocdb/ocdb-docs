@@ -57,6 +57,7 @@ __Operator TO to search for ranges__:
 
 ```
 received: ["20191104" TO "20191108"]
+start_date: ["19900101" TO "20211231"] AND end_date: ["20210101" TO "20221231"]
 ```
 Please note that the operator TO must be written in **upper** case
 
