@@ -1,4 +1,4 @@
-# Search the Database
+# Search the OCDB using the GUI
 
 All data the submitters have agreed to publish data searchable for the public.
 
@@ -15,7 +15,12 @@ The free text search exhibits the following characteristics:
 - it is not case-sensitive
 - words in the header are separated by '_' or any punctuation mark, e. g. comma or period
 
-The search terms 'a*ph', 'a*srfa' and 'abs*' will search for the respective parameters.
+The following search terms will search for the respective parameters:
+```
+"a*ph"
+"a*srfa"
+"abs*"
+```
 
 Examples:
 
@@ -28,7 +33,8 @@ Alexander_Dubois         (searches for Alxander_Dubois more precisely and this m
 
 __Please note:__
 - Words starting with a digit, must be written in quotes
-- Phrases mus be written in quotes
+- Phrases must be written in quotes
+- search terms using wildcards must be written without quotes
 
 ## Lucene Syntax
 
@@ -65,6 +71,17 @@ investigators: Coll*
 investigators: Coll??n
 ```
 
+To search for any word containing the char 'a' use:
+```
+a*
+```
+To search for all parameters starting with 'a' use:
+```
+fields: ,a*
+```
+Keep in mind that the value for the metadata header fields is a comma-separated list of parameter names.
+
+
 __Please note:__
 
 - words starting with a digit, must be written in quotes
@@ -85,17 +102,16 @@ __Operators AND/OR__:
 These operators allow to combine conditions. As expected, the "AND" implements a logical AND,
 the "OR" represents the logical OR operation.
 
-__Please note:__ The operators AND and OR must be written in **upper** case.
+__Please note:__
+- The operators AND and OR must be written in **upper** case.
 
 ```
 investigators: Colleen* AND start_date: '2016-04-01'
 investigators: Colleen* OR investigators: *Helge*
-fields: chl_a*  or sza*
+fields: ,chl_a*  or ,sza*
 ```
 
 __Operator TO to search for ranges__:
-
-__All words are treated as strings, even if they represent numeric content.__
 
 Thus, searches with numeric ranges require that start and end values have the same length,
 which is explicitly true for dates.
@@ -114,7 +130,9 @@ The first example will list all files which:
 - contain data measured in water_depths between 10 and 20 meters
 - contain data in latitudes ranging between 50 and 60 degrees north
 
-__Please note:__ The operator TO must be written in **upper** case.
+__Please note:__
+- The operator TO must be written in **upper** case.
+- All words are treated as strings, even if they represent numeric content.
 
 When applying the operator 'TO', alphanumerical comparisons are used
 (i. e. 'C' > 'B' is TRUE and '20' < '9' is TRUE as well!).
@@ -159,12 +177,25 @@ missing: "-999.0"
 Consider that some of the metadata in the above list are not mandatory,
 thus the search results for these metadata headers could be non-exhaustive.
 
-## Groups
+##Search examples
+###Products (Parameter)
+1. Products can be chosen from a select list within the advanced search dialog.
+   However, valid search results can only be obtained for products without postfix,
+   e. g. wavelengths.
+   
+2. For postfixed products such as 'Rrs400' or 'SZA1020' the search text field
+   shall be used. __All product names__ have to be followed by '*' or '?':
+   
+```
+fields: SZA* OR fields: Chl_a*
+```
+
+### Product groups
 
 The webbased search interface allows to restrict result sets to certain geophysical
 variable types, organised by groups. They can be chosen from a selct list.
 A list of groups and the variables covered is given in the table below.
-Single product acronyms are fully described [here](ocdb-standard-field-unit.md).
+Single product acronyms are fully described [OCDB standard field names and units](ocdb-standard-field-unit.md).
 
 ```eval_rst
 ============ ==========================================================================
@@ -191,29 +222,21 @@ HPLC         HPLC derived phytoplankton pigments (allo, alpha*, anth, asta, beta
 productivity NPP, NCP, GPP, PP
 ============ ==========================================================================
 ```
-For a detailed list of parameter names see: https://seabass.gsfc.nasa.gov/wiki/stdfields.
 
-##Search topics
-###Products (Parameter)
-1. Products can be chosen from a select list within the advanced search dialog.
-   However, valid search results can only be obtained for products without postfix,
-   e. g. wavelengths.
-   
-2. For postfixed products such as 'Rrs400' or 'SZA1020' the search text field
-   shall be used. __All product names__ have to be followed by '*' or '?':
-   
-```
-fields: SZA* OR fields: Chl_a*
-```
+For a detailed list of parameter names see: https://seabass.gsfc.nasa.gov/wiki/stdfields.
 
 ##Time range
 
 In order to choose a time period covered by the data files, the metadata headers
-start_date and end_date shall be used:
+start_date and end_date can be used as follows:
 
 ```
-start_date: ["20210101" TO "20211231"] OR end_date: ["20210101" TO "20211231"]
+start_date: ["19000101" TO "20211231"] OR end_date: ["20210101" TO "20990101"]
 ```
 
+## Region
 
+1. You can use the interactive map to select a region by a rectangle or a polygon.
+2. You can use the Python API or the OCDB command line interface to search for datasets by defining a certain region
+   (see [OCDB Command Line Client and Python API](ocdb-api-cli.md)). 
    

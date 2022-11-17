@@ -84,14 +84,14 @@ After login (see chapter "User Management" below), the method 'find_datasets' al
 - __mtype__: filters radiometric data depending on wavelength option. Could be 'all', 'multispectral' or 'hyperspectral'
 - __shallow__: set to 'yes' to include also measurements indicated as done in shallow waters by the PIs (Default is 'no')
 - __pmode__: can be set either to 'contains' (to filter results based on selected pgroup or variables), or to 'same_cruise' (to include measurements from cruise during which __all__ the selected groups/variables were acquired), or to 'do_not_filter' (to not filter results at all) 
-- __pgroup__: looks for files containing only certain geophysical variable types. Refer to [Search](ocdb-search.md) chapter for the complete list
-- __pname__: looks for files containing only the specified variables. A complete list of queryable variables are available [here](ocdb-standard-field-unit.md)
+- __pgroup__: looks for files containing only certain geophysical variable types. Refer to [Search the OCDB using the GUI](ocdb-search.md) chapter for the complete list
+- __pname__: looks for files containing only the specified variables. A complete list of queryable variables are available [OCDB standard field names and units](ocdb-standard-field-unit.md)
 - __status__: set to 'PUBLISHED' to get only public available data or to 'PROCESSED' to get both public and not published data (available only for admin users and data owners) 
 - __submission_id__: looks for data submitted below the specified submission label
 - __geojson__: (Default is True)
 - __user_id__: look for data submitted by the specified user (by username)
 
-The results is a dictionary containing information and whole dataset related to the file containing the measurement the satisfied the search criteria.
+The result is a dictionary containing information and whole dataset related to the file containing the measurement the satisfied the search criteria.
 Dictionary keys are: 
 
 - *locations*: geometries representing the spatial extent of each dataset (point or rectangle)
@@ -103,6 +103,7 @@ Dictionary keys are:
 cli: 
 ```bash
 ocdb-cli ds find --query region=50,45,51,46
+ocdb-cli ds find --query start_time=2021-01-01 --query end_time=2021-12-31
 ```
 
 python:
@@ -111,7 +112,7 @@ data = api.find_datasets(region='50,45,51,46')
 data['datasets']
 
   [{'id': '5d97112af9305e0001c6d6fc', 'path': 'LOG/IOPstudy/DS3', 'filename': 'DS3_IOPstudy.csv'}]
-
+data = api.find_datasets(end_time='2021-12-31')
 ```
 
 ## Search Database with Lucene syntax
@@ -140,7 +141,7 @@ api.find_datasets(expr="investigators=*Astrid*")
 
 {
   "locations": {},
-  "total_count": 4,
+  "total_count": 4 ,
   "datasets": [
     {
       "id": "5d2433e81f59e20001aaae74",
@@ -149,7 +150,7 @@ api.find_datasets(expr="investigators=*Astrid*")
     ...
 ```
 
-A complete and up-to-date list of the fields that can be queried is available [here](ocdb-search.md)
+A complete and up-to-date list of the fields that can be queried is available [Search the OCDB using the GUI](ocdb-search.md)
 
 ## Get Datasets
 
