@@ -1,4 +1,4 @@
-# The OCDB Command Line Client and Python API
+# The OCDB command line client (ocdb-cli) and Python API
 
 Automation and easy access is important. The OCDB database system does,
 therefore, offer a command line interface as well as a Python API for accessing
