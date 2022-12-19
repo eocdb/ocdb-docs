@@ -10,6 +10,7 @@ Five keywords are accepted (one for each file type). The keyword should be prece
 by “!” and should be alone on a line (see example). The five keywords are listed below.
 
 **1.1 Calibration files**
+
 ```eval_rst
 ======= ==============================================================
 Keyword Description
@@ -18,7 +19,7 @@ RADCAL  radiometric calibration coefs & linearity, lamp and panel data
 ======= ==============================================================
 ```
 
-**1.2 Caracterisation files**
+**1.2 Chracterisation files**
 
 ```eval_rst
 ========= ==============================================================
@@ -28,7 +29,7 @@ ANGDATA   angular responsivity characterization results
 POLDATA   polarization sensitivity characterization results
 STRAYDATA straylight characterization results
 TEMPDATA  thermal characterization results
-======= ==============================================================
+========= ==============================================================
 ```
 
 In the following example file the keyword for file type recognition is on line 2 (!POLDATA):
