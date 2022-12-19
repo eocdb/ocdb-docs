@@ -101,8 +101,8 @@ different tests depending on the metadata. Those tests are explained in the foll
 ================ ===================== =====================================================================
 Metadata name    Ending code           Test
 ================ ===================== =====================================================================
-[CALDATE]        -                     Valid date format: YYYY-MM-DD HH:MM:SS
-[DEVICE]         -                     Device serial number. Either SAM_XXXX for TriOS or SATXXXX for
+[CALDATE]           x                  Valid date format: YYYY-MM-DD HH:MM:SS
+[DEVICE]            x                  Device serial number. Either SAM_XXXX for TriOS or SATXXXX for
                                        Satlantic.
 [CALDATA]        [END_OF_CALDATA]      File type = RADCAL. More than 5 lines, columns are separated by
                                        tabulations,  10 columns (i.e. elements per line) for TriOS senors
