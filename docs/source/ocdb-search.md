@@ -216,7 +216,7 @@ nutrients    Si (sio4), N (n2_fix, nh4, no2, no2_no3, no3, tdn, urea),
              P (pn, po4, pon), oxygen
 CTD          Hydrography: wt, sal/cond, sigmat
 Chl          Chlorophyll, fluorometrically/spectrophotometrically derived:
-                 Chl*, phaeo, tpg
+             Chl*, phaeo, tpg
 fluorescence Fluorescence (natf, stimf)
 HPLC         HPLC derived phytoplankton pigments (allo, alpha*, anth, asta, beta-*, ...
 productivity NPP, NCP, GPP, PP

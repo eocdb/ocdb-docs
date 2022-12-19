@@ -105,34 +105,34 @@ Metadata name    Ending code           Test
 [DEVICE]         -                     Device serial number. Either SAM_XXXX for TriOS or SATXXXX for
                                        Satlantic.
 [CALDATA]        [END_OF_CALDATA]      File type = RADCAL. More than 5 lines, columns are separated by
-                                           tabulations,  10 columns (i.e. elements per line) for TriOS senors
-                                           and 8 for satlantic sensors.
+                                       tabulations,  10 columns (i.e. elements per line) for TriOS senors
+                                       and 8 for satlantic sensors.
                                        File type = POLDATA. More than 5 lines, columns are separated by
-                                            tabulations, 5 columns (i.e. elements per line)
+                                       tabulations, 5 columns (i.e. elements per line)
                                        File type = TEMPDATA. More than 5 lines, columns are separated by
-                                            tabulations, 3 columns (i.e. elements per line)
+                                       tabulations, 3 columns (i.e. elements per line)
 [COSERROR]       [END_OF_COSERROR]     More than 5 lines, columns are separated by tabulations,
-                                            47 columns (i.e. elements per line)
+                                       47 columns (i.e. elements per line)
 [UNCERTAINTY]    [END_OF_UNCERTAINTY]  File type = ANGDATA. More than 5 lines, columns are separated by
-                                            tabulations, 47 columns (i.e. elements per line)
+                                       tabulations, 47 columns (i.e. elements per line)
 [UNCERTAINTY]    [END_OF_UNCERTAINTY]  File type = STRAYDATA. More than 5 lines, columns are separated
-                                            by tabulations,  256 columns (i.e. elements per line) 
+                                       by tabulations,  256 columns (i.e. elements per line) 
 [LSF]            [END_OF_LSF]          More than 5 lines, columns are separated by tabulations,
-                                            256 columns (i.e. elements per line)
-[AZIMUTH_ANGLE]  -                     Must be a float 
-[PANEL_ID]       -                     Not empty character string
-[LAMP_ID]        -                     Not empty character string
-[USER]           -                     Not empty character string
-[CALLAB]         -                     Not empty character string
-[LAMP_CCT]       -                     Must be a float
-[VERSION]        -                     Must be a float
-[AMBIENT_TEMP]   -                     Must be a float
-[REFERENCE_TEMP] -                     Must be a float
-[DEVICE_TEMP]    -                     Must be a float
+                                       256 columns (i.e. elements per line)
+[AZIMUTH_ANGLE]     x                  Must be a float 
+[PANEL_ID]          x                  Not empty character string
+[LAMP_ID]           x                  Not empty character string
+[USER]              x                  Not empty character string
+[CALLAB]            x                  Not empty character string
+[LAMP_CCT]          x                  Must be a float
+[VERSION]           x                  Must be a float
+[AMBIENT_TEMP]      x                  Must be a float
+[REFERENCE_TEMP]    x                  Must be a float
+[DEVICE_TEMP]       x                  Must be a float
 [PANELDATA]      [END_OF_PANELDATA]    More than 5 lines, columns are separated by tabulations,
-                                            4 columns (i.e. elements per line) 
+                                       4 columns (i.e. elements per line) 
 [LAMPDATA]       [END_OF_LAMPDATA]     More than 5 lines, columns are separated by tabulations,
-                                            4 columns (i.e. elements per line)
+                                       4 columns (i.e. elements per line)
 ================ ===================== =====================================================================
 ```
 
@@ -144,23 +144,23 @@ To be valid, a calibration file need to contain certain valid metadata whereas o
 ============== ======= ======= ====== ========= ========
 Metadata       ANGDATA POLDATA RADCAL STRAYDATA TEMPDATA
 ============== ======= ======= ====== ========= ========
-CALDATE        M       M       M      M         M
-DEVICE         M       M       M      M         M
-CALLAB         M       M       M      M         M
-USER           O       O       O      O         O
-VERSION        O       O       O      O         O
-CALDATA        -       M       M      -         M
-UNCERTAINTY    M       -       -      M         - 
-COSERROR       M       -       -      -         -
-LSF            -       -       -      M         -
-PANEL_ID       -       -       O      -         -
-LAMP_ID        -       -       O      -         -
-AZIMUTH_ANGLE  M       -       -      -         - 
-LAMP_CCT       -       -       O      -         -
-AMBIENT_TEMP   -       O       O       O        O
-REFERENCE_TEMP -       -       -       -        M
-PANELDATA      -       O       -       -        -
-LAMPDATA       -       O       -       -        -
+CALDATE           M       M       M      M         M
+DEVICE            M       M       M      M         M
+CALLAB            M       M       M      M         M
+USER              O       O       O      O         O
+VERSION           O       O       O      O         O
+CALDATA           x       M       M      x         M
+UNCERTAINTY       M       x       x      M         x 
+COSERROR          M       x       x      x         x
+LSF               x       x       x      M         x
+PANEL_ID          x       x       O      x         x
+LAMP_ID           x       x       O      x         x
+AZIMUTH_ANGLE     M       x       x      x         x 
+LAMP_CCT          x       x       O      x         x
+AMBIENT_TEMP      x       O       O       O        O
+REFERENCE_TEMP    x       x       x       x        M
+PANELDATA         x       O       x       x        x
+LAMPDATA          x       O       x       x        x
 ============== ======= ======= ====== ========= ========
 ```
 
