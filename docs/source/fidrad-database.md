@@ -10,19 +10,26 @@ Five keywords are accepted (one for each file type). The keyword should be prece
 by “!” and should be alone on a line (see example). The five keywords are listed below.
 
 **1.1 Calibration files**
-
-| Keyword | Description |
-| ------- | ----------- |
-| RADCAL | radiometric calibration coefs & linearity, lamp and panel data |
+```eval_rst
+======= ==============================================================
+Keyword Description
+======= ==============================================================
+RADCAL  radiometric calibration coefs & linearity, lamp and panel data
+======= ==============================================================
+```
 
 **1.2 Caracterisation files**
 
-| Keyword | Description |
-| ------- | ----------- |
-| ANGDATA | angular responsivity characterization results |
-| POLDATA | polarization sensitivity characterization results |
-| STRAYDATA | straylight characterization results |
-| TEMPDATA | thermal characterization results |
+```eval_rst
+========= ==============================================================
+Keyword   Description
+========= ==============================================================
+ANGDATA   angular responsivity characterization results
+POLDATA   polarization sensitivity characterization results
+STRAYDATA straylight characterization results
+TEMPDATA  thermal characterization results
+======= ==============================================================
+```
 
 In the following example file the keyword for file type recognition is on line 2 (!POLDATA):
 
@@ -89,29 +96,44 @@ others extend over multiple lines. In this last case, the last line is followed 
 [END_OF_XXX], where XXX is the metadata name. Validity of metadata information is checked with
 different tests depending on the metadata. Those tests are explained in the following table.
 
-| Metadata name | Ending code | Test |
-| ------ | ------ | ------ |
-| [CALDATE] | - | Valid date format: YYYY-MM-DD HH:MM:SS|
-| [DEVICE] | - | Device serial number. Either SAM_XXXX for TriOS or SATXXXX for Satlantic. |
-| [CALDATA] | [END_OF_CALDATA] | File type = RADCAL. More than 5 lines, columns are separated by tabulations,  10 columns (i.e. elements per line) for TriOS senors and 8 for satlantic sensors. |
-| | | File type = POLDATA. More than 5 lines, columns are separated by tabulations, 5 columns (i.e. elements per line) |
-| | | File type = TEMPDATA. More than 5 lines, columns are separated by tabulations, 3 columns (i.e. elements per line) |
-| [COSERROR] | [END_OF_COSERROR] | More than 5 lines, columns are separated by tabulations, 47 columns (i.e. elements per line) |
-| [UNCERTAINTY] | [END_OF_UNCERTAINTY] | File type = ANGDATA. More than 5 lines, columns are separated by tabulations, 47 columns (i.e. elements per line)  |
-| [UNCERTAINTY] | [END_OF_UNCERTAINTY] | File type = STRAYDATA. More than 5 lines, columns are separated by tabulations,  256 columns (i.e. elements per line)  |
-| [LSF] | [END_OF_LSF] | More than 5 lines, columns are separated by tabulations, 256 columns (i.e. elements per line) |
-| [AZIMUTH_ANGLE] | - | Must be a float | 
-| [PANEL_ID] | - | Not empty character string |
-| [LAMP_ID] | - | Not empty character string |
-| [USER] | - | Not empty character string |
-| [CALLAB] | - | Not empty character string |
-| [LAMP_CCT] | - | Must be a float |
-| [VERSION] | - | Must be a float |
-| [AMBIENT_TEMP] | - | Must be a float |
-| [REFERENCE_TEMP] | - | Must be a float |
-| [DEVICE_TEMP] | - | Must be a float |
-| [PANELDATA] | [END_OF_PANELDATA] | More than 5 lines, columns are separated by tabulations, 4 columns (i.e. elements per line) | 
-| [LAMPDATA] | [END_OF_LAMPDATA] | More than 5 lines, columns are separated by tabulations,  4 columns (i.e. elements per line) |
+```eval_rst
+================ ===================== =====================================================================
+Metadata name    Ending code           Test
+================ ===================== =====================================================================
+[CALDATE]        -                     Valid date format: YYYY-MM-DD HH:MM:SS
+[DEVICE]         -                     Device serial number. Either SAM_XXXX for TriOS or SATXXXX for
+                                       Satlantic.
+[CALDATA]        [END_OF_CALDATA]      File type = RADCAL. More than 5 lines, columns are separated by
+                                           tabulations,  10 columns (i.e. elements per line) for TriOS senors
+                                           and 8 for satlantic sensors.
+                                       File type = POLDATA. More than 5 lines, columns are separated by
+                                            tabulations, 5 columns (i.e. elements per line)
+                                       File type = TEMPDATA. More than 5 lines, columns are separated by
+                                            tabulations, 3 columns (i.e. elements per line)
+[COSERROR]       [END_OF_COSERROR]     More than 5 lines, columns are separated by tabulations,
+                                            47 columns (i.e. elements per line)
+[UNCERTAINTY]    [END_OF_UNCERTAINTY]  File type = ANGDATA. More than 5 lines, columns are separated by
+                                            tabulations, 47 columns (i.e. elements per line)
+[UNCERTAINTY]    [END_OF_UNCERTAINTY]  File type = STRAYDATA. More than 5 lines, columns are separated
+                                            by tabulations,  256 columns (i.e. elements per line) 
+[LSF]            [END_OF_LSF]          More than 5 lines, columns are separated by tabulations,
+                                            256 columns (i.e. elements per line)
+[AZIMUTH_ANGLE]  -                     Must be a float 
+[PANEL_ID]       -                     Not empty character string
+[LAMP_ID]        -                     Not empty character string
+[USER]           -                     Not empty character string
+[CALLAB]         -                     Not empty character string
+[LAMP_CCT]       -                     Must be a float
+[VERSION]        -                     Must be a float
+[AMBIENT_TEMP]   -                     Must be a float
+[REFERENCE_TEMP] -                     Must be a float
+[DEVICE_TEMP]    -                     Must be a float
+[PANELDATA]      [END_OF_PANELDATA]    More than 5 lines, columns are separated by tabulations,
+                                            4 columns (i.e. elements per line) 
+[LAMPDATA]       [END_OF_LAMPDATA]     More than 5 lines, columns are separated by tabulations,
+                                            4 columns (i.e. elements per line)
+================ ===================== =====================================================================
+```
 
 **3. Mandatory and optional metadata**
 
