@@ -4,7 +4,7 @@ All data the submitters have agreed to publish data searchable for the public.
 
 The OCDB WebUI offers a graphical search interface. Main feature of this interface is the search text field.
 
-##Free text search
+## Free text search
 Just entering any __whole word__ allows querying the Database for any file containing that specific __whole word__.
 
 For example typing 'rrs412, sza412, chl_a' (without quotes), all the measurement files containing the word 'rrs412', 'sza412' or 'chl_a' in the file header are returned.
@@ -177,8 +177,10 @@ missing: "-999.0"
 Consider that some of the metadata in the above list are not mandatory,
 thus the search results for these metadata headers could be non-exhaustive.
 
-##Search examples
-###Products (Parameter)
+## Search examples
+
+### Products (Parameter)
+
 1. Products can be chosen from a select list within the advanced search dialog.
    However, valid search results can only be obtained for products without postfix,
    e. g. wavelengths.
@@ -225,7 +227,7 @@ productivity NPP, NCP, GPP, PP
 
 For a detailed list of parameter names see: https://seabass.gsfc.nasa.gov/wiki/stdfields.
 
-##Time range
+## Time range
 
 In order to choose a time period covered by the data files, the metadata headers
 start_date and end_date can be used as follows:
