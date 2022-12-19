@@ -117,25 +117,29 @@ different tests depending on the metadata. Those tests are explained in the foll
 
 To be valid, a calibration file need to contain certain valid metadata whereas others are only optional. The table below summarize for each file type which metadata are mandatory and which are optional. If the all the mandatory metadata are present and valid the file is accepted in the FRM OCDB database.
 
-| | ANGDATA | POLDATA | RADCAL | STRAYDATA | TEMPDATA | 
-| ------ | ------ | ------ | ------ | ------ | ------ |
-| CALDATE | M | M | M | M | M |
-| DEVICE | M | M | M | M | M |
-| CALLAB | M | M | M | M | M |
-| USER | O | O | O | O | O |
-| VERSION | O | O | O | O | O |
-| CALDATA | - | M | M | - | M |
-| UNCERTAINTY | M | - | - | M | - |
-| COSERROR | M | - | - | - | - |
-| LSF | - | - | - | M | - |
-| PANEL_ID | - | - | O | -| - |
-| LAMP_ID | - | - | O | -| - |
-| AZIMUTH_ANGLE | M | - | - | - | - |
-| LAMP_CCT | - | - | O | -| - |
-| AMBIENT_TEMP | - | O | O | O| O |
-| REFERENCE_TEMP | - | - | - | - | M |
-| PANELDATA | - | O | - | -| - |
-| LAMPDATA | - | O | - | -| - |
+```eval_rst
+============== ======= ======= ====== ========= ========
+Metadata       ANGDATA POLDATA RADCAL STRAYDATA TEMPDATA
+============== ======= ======= ====== ========= ========
+CALDATE        M       M       M      M         M
+DEVICE         M       M       M      M         M
+CALLAB         M       M       M      M         M
+USER           O       O       O      O         O
+VERSION        O       O       O      O         O
+CALDATA        -       M       M      -         M
+UNCERTAINTY    M       -       -      M         - 
+COSERROR       M       -       -      -         -
+LSF            -       -       -      M         -
+PANEL_ID       -       -       O      -         -
+LAMP_ID        -       -       O      -         -
+AZIMUTH_ANGLE  M       -       -      -         - 
+LAMP_CCT       -       -       O      -         -
+AMBIENT_TEMP   -       O       O       O        O
+REFERENCE_TEMP -       -       -       -        M
+PANELDATA      -       O       -       -        -
+LAMPDATA       -       O       -       -        -
+============== ======= ======= ====== ========= ========
+```
 
 In this table "M" means that metadata is mandatory, "O" optional and "-" is used when the metadata is
 not present for the file type.
