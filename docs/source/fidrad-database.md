@@ -24,9 +24,58 @@ by “!” and should be alone on a line (see example). The five keywords are li
 | STRAYDATA | straylight characterization results |
 | TEMPDATA | thermal characterization results |
 
-On this example keyword for file type recognition is on line 2 (!POLDATA)
+In the following example file the keyword for file type recognition is on line 2 (!POLDATA):
 
-![image_file](/uploads/9d692a0605e4aa45505e18e5d9ddf1f1/image_file.png)
+```bash
+!FRM4SOC_CP
+!POLDATA
+# polarization sensitivity characterization results
+
+# comments start with # (ignored by the processor)
+# no empty lines between the parameter signatures in [] and the parameter values
+# parameters are case insensitive
+# parameters can be inserted in any order, except the first two signatures
+# columns are tab- or space-delimited
+
+# file format version
+# type(s): string(255)
+[VERSION]
+0.1
+
+# calibration date
+# type(s): fixed format as shown
+[CALDATE]
+yyyy-mm-dd hh:mm:ss
+
+# calibration lab name
+# type(s): string(255)
+[CALLAB]
+Tartu Observatory
+
+# calibration lab person to contact
+# type(s): string(255)
+[USER]
+Riho Vendt
+
+# serial number of the instrument
+# type(s): string(255)
+[DEVICE]
+SAM_8329
+
+# polarization phase angle
+# type(s): single
+[POLANGLE]
+0.07
+
+# pixel no, angle of the max sensitivity plane (rad), uncertainty (rad, k=2), semi-amplitude, uncertainty (k=2)
+# type(s): uint8, single, single, single, single
+[CALDATA]
+0	3.7514E-01	3.7514E-03	-8.3789E-03	1.6758E-04
+1	3.9847E-01	3.9847E-03	-8.6576E-03	1.7315E-04
+2	3.5573E-01	3.5573E-03	7.2163E-04	1.4433E-05
+3	4.1062E-01	4.1062E-03	-2.1019E-03	4.2038E-05
+:
+```
 
 Keywords are researched in any line of the file. If a certain keyword is not recognised or
 occurs multiple times, the file is not accepted and the file submission process is stopped.
