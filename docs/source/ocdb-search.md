@@ -178,7 +178,9 @@ Consider that some of the metadata in the above list are not mandatory,
 thus the search results for these metadata headers could be non-exhaustive.
 
 ##Search examples
+
 ###Products (Parameter)
+
 1. Products can be chosen from a select list within the advanced search dialog.
    However, valid search results can only be obtained for products without postfix,
    e. g. wavelengths.
@@ -225,16 +227,16 @@ productivity NPP, NCP, GPP, PP
 
 For a detailed list of parameter names see: https://seabass.gsfc.nasa.gov/wiki/stdfields.
 
-##Time range
+###Time range
 
 In order to choose a time period covered by the data files, the metadata headers
-start_date and end_date can be used as follows:
+start_date and end_date can be used as follows to search for data partly covering 1. Jan. to 31. Dec. 2021:
 
 ```
 start_date: ["19000101" TO "20211231"] OR end_date: ["20210101" TO "20990101"]
 ```
 
-## Region
+### Region
 
 1. You can use the interactive map to select a region by a rectangle or a polygon.
 2. You can use the Python API or the OCDB command line interface to search for datasets by defining a certain region
