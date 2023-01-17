@@ -1,6 +1,51 @@
 # Metadata Headers
 
+All SEABASS data files must start with a metadata header. The header starts with a line "/begin_header"
+and ends with a line "/end_header". All metadata elements start with a slash, whereas comment lines start with a quotation mark.
+
+For AERONET-OC data the following header could be used:
+
+```bash
+/begin_header
+/investigators=Giuseppe_Zibordi
+/affiliations=NA
+/contact=giuseppe.zibordi@ec.europa.eu
+/experiment=AErosol-RObotic-NETwork
+/cruise=Abu_Al_Bukhoosh
+/data_file_name=20020101_20220409_Abu_Al_Bukhoosh.csv
+! Comments:
+! AERONET metadata:
+! Version = AERONET Version 3
+! AERONET_Site_Name=Abu_Al_Bukhoosh
+! Site_Elevation(m)=24.5
+! Data_Quality_Level=lev20
+! Last_Date_Processed=2021/01/27
+! The following data are automatically cloud cleared and quality assured with pre-field and post-field calibration applied.
+! Usage (in brief): Due to the research and development phase characterizing AERONET-Ocean Color, use of these data requires offering co-authorship to the Principal Investigator (PI).
+! Calibration file: See https://aeronet.gsfc.nasa.gov/new_web/system_descriptions_calibration.html
+/station=Abu_Al_Bukhoosh
+/documents=Abu_Al_Bukhoosh.html
+/calibration_files=system_descriptions_calibration.html
+/data_type=above_water
+/wavelength_option=multispectral
+/start_date=20040927
+/end_date=20080608
+/start_time=08:52:35[GMT]
+/end_time=03:59:17[GMT]
+/north_latitude=25.495[DEG]
+/south_latitude=25.495[DEG]
+/east_longitude=53.14583[DEG]
+/west_longitude=53.14583[DEG]
+/water_depth=NA
+/missing=-999.0
+/delimiter=comma
+/fields=date,time,sdy,lat,lon,altitude,SZA340,SZA380,SZA400,SZA412,SZA440,SZA443,SZA490,SZA500,SZA510,SZA531, ...
+/units=yyyymmdd,hh:mm:ss,ddd,degrees,degrees,m,degrees,degrees,degrees,degrees,degrees,degrees,degrees,degrees,degrees,degrees, ...
+/end_header
+```
+
 Below, the list of required and optional headers is shown, with description and examples.
+
 Note that some optional headers are recommended: they are used to perform measurements quality check. Measurements for which these metadata are not provided, cannot be flagged as best quality.
 
 ## Required Headers
@@ -92,11 +137,54 @@ The following headers are optional. Some of them, if not provided, are added by 
 
 * **wave_height** The wave height at the station where the data were collected (in meters). It could be also provided as a data field (field name: 'waveht'). Recommended.   
 
-* **wind_speed** The wind speed at the station where the data were collected (in meters per second). It could be also provided as a data field (field name: 'wind'). Recommended.   
+* **wind_speed** The wind speed at the station where the data were collected (in meters per second). It could be also provided as a data field (field name: 'wind'). Recommended.
 
-<!--
-## Headers added by OCDB staff
-The following fields (marked as obsolete in the validation rules) are added and managed by OCDB staff.
-* **received** Date when the file has been submitted into the Database by investigators
-* **processed** Date when the file has been processed and published into the Database
--->
+If the SEABASS file does not fulfill the validation requirements, a corresponding warning or error
+is issued for each dataset. If a dataset contains one or more errors, the dataset will be mark es "Error" and
+the whole submission it belongs to, will not be categorised as "Validated" but as "Submitted" only.
+
+### Error messages
+
+1. Metadata header does not start with "/begin_header": /begin_header tag missing
+2. Metadata header does not end with "/end_header": /end_header tag missing
+3. Header field "fields" is missing: SeaBASS header field "fields" required. See: https://seabass.gsfc.nasa.gov/wiki/metadataheaders#fields')
+4. Header field "units" is missing: SeaBASS header field "units" required. See: https://seabass.gsfc.nasa.gov/wiki/metadataheaders#units')
+5. Numbers of "fields" and "units" are unequal: Number of fields (X) does not match number of units (Y).
+6. Numbers of "fields" and "columns" are unequal: Number of fields (X) does not match number of columns (Y).
+7. Value is not numeric: Value must be numeric.
+8. Neither the fields "start_date" and "end_date", nor the columns "date" and "time" exist:
+   Acquisition time not properly encoded. For details see: https://seabass.gsfc.nasa.gov/wiki/stdfields "
+                "or https://seabass.gsfc.nasa.gov/wiki/metadataheaders#Example%20Header.
+9. Neither the fields "north_latitude", "south_latitude", "west_longitude" and "east_longitude" nor
+   the columns "lat" and "lon" exist or the data format is wrong: Geolocation not properly encoded (for details
+   see: https://seabass.gsfc.nasa.gov/wiki/metadataheaders#north_latitude).
+10. A value between two column delimiters is missing: Value missing in data row X and column Y. Please use
+	the placeholder as defined in metadata header “/missing”.
+11. Header field "delimiter" is msissing: Missing delimiter tag in header
+12. Delimiter valuedoes not correspond to "comma", "space" or "tab": Invalid delimiter-value in header
+13. "Start_date" or "end_date" lack the suffix "[GMT]": No time zone given. Required all times be expressed as [GMT]
+14. "Start_date" or "end_date" do not correspond to the syntax "yyyymmdd":
+	Invalid date format. Format must correspond to YYYYMMDD.
+
+Valid value ranges for year month day are (1900-current_year) (1-12) (1-31).
+
+15. "Start_time" or "end_time" do not correspond to the syntax "hh:mm:ss":
+	Invalid time format ... . Format must correspond to HH:MM:SS. See:
+	https://seabass.gsfc.nasa.gov/wiki/metadataheaders#start_date
+
+Valid value ranges for HH MM SS are (00-23) (00-59) (00-59).
+
+16. A unit does not correspond to the unit pre-defined for the corresponding field:
+    The units of '{field_name}', should be '{unit}', not '{bad_unit}'.
+
+17. A value is less than the lower_bound value or greater than upper_bound:
+    The field ... has value (...) outside expected range [{lower_bound} - {upper_bound}]
+
+18. The data_type of any value is wrong: Invalid data type in field validation rule.
+
+### Warning messages
+
+1. A column name does not belong to the list of SEABASS fields:
+   Variable not listed in valid variables.
+   For details see: https://seabass.gsfc.nasa.gov/wiki/stdfields#Table%20of%20Field%20Names%20and%20Units
+   
