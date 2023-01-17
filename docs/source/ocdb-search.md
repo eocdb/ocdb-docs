@@ -227,7 +227,7 @@ productivity NPP, NCP, GPP, PP
 
 For a detailed list of parameter names see: https://seabass.gsfc.nasa.gov/wiki/stdfields.
 
-## Time range
+### Time range
 
 In order to choose a time period covered by the data files, the metadata headers
 start_date and end_date can be used as follows to search for data partly covering 1. Jan. to 31. Dec. 2021:
