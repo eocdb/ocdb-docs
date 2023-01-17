@@ -143,7 +143,7 @@ If the SEABASS file does not fulfill the validation requirements, a correspondin
 is issued for each dataset. If a dataset contains one or more errors, the dataset will be mark es "Error" and
 the whole submission it belongs to, will not be categorised as "Validated" but as "Submitted" only.
 
-### Error messages
+## Error messages
 
 1. Metadata header does not start with "/begin_header": /begin_header tag missing
 2. Metadata header does not end with "/end_header": /end_header tag missing
@@ -182,7 +182,7 @@ Valid value ranges for HH MM SS are (00-23) (00-59) (00-59).
 
 18. The data_type of any value is wrong: Invalid data type in field validation rule.
 
-### Warning messages
+## Warning messages
 
 1. A column name does not belong to the list of SEABASS fields:
    Variable not listed in valid variables.
