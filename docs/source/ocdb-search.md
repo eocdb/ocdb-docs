@@ -240,4 +240,4 @@ start_date: ["19000101" TO "20211231"] OR end_date: ["20210101" TO "20990101"]
 
 1. You can use the interactive map to select a region by a rectangle or a polygon.
 2. You can use the Python API or the OCDB command line interface to search for datasets by defining a certain region
-   (see [OCDB Command Line Client and Python API](ocdb-api-cli.md)). 
+   (see [OCDB Command Line Client and Python API](ocdb-api-cli.md)).
