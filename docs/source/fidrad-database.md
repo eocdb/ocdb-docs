@@ -53,7 +53,7 @@ In the following example file the keyword for file type recognition is on line 2
 # calibration date
 # type(s): fixed format as shown
 [CALDATE]
-yyyy-mm-dd hh:mm:ss
+2022-06-02 16:39:26
 
 # calibration lab name
 # type(s): string(255)
@@ -68,21 +68,25 @@ Riho Vendt
 # serial number of the instrument
 # type(s): string(255)
 [DEVICE]
-SAM_8329
+SAM_8268
 
-# polarization phase angle
+# lab temperature (deg Celsius) during cal/char measurements
 # type(s): single
-[POLANGLE]
-0.07
+[AMBIENT_TEMP]
+21.0
 
-# pixel no, angle of the max sensitivity plane (rad), uncertainty (rad, k=2), semi-amplitude, uncertainty (k=2)
-# type(s): uint8, single, single, single, single
+# pixel no, wavelength (nm), semi-amplitude, uncertainty (k=2), angle of the max sensitivity plane (rad), uncertainty (rad, k=2)
+# type(s): uint8, single, single, single, single, single
 [CALDATA]
-0	3.7514E-01	3.7514E-03	-8.3789E-03	1.6758E-04
-1	3.9847E-01	3.9847E-03	-8.6576E-03	1.7315E-04
-2	3.5573E-01	3.5573E-03	7.2163E-04	1.4433E-05
-3	4.1062E-01	4.1062E-03	-2.1019E-03	4.2038E-05
+0	302.09	0.000E+00	0.000E+00	0.000E+00	0.000E+00
+1	305.41	1.844E-02	3.111E-02	2.081E+02	2.741E+02
+2	308.72	2.995E-02	2.607E-02	4.821E+01	8.037E+01
+3	312.04	3.577E-03	3.247E-02	3.454E+01	1.189E+03
 :
+253	1139.19	1.342E-01	1.132E-01	3.853E+01	9.843E+01
+254	1142.36	4.834E-02	3.305E-02	3.246E+02	8.711E+01
+255	1145.53	2.149E-02	2.105E-02	7.005E+01	6.310E+01
+[END_OF_CALDATA]
 ```
 
 Keywords are researched in any line of the file. If a certain keyword is not recognised or
