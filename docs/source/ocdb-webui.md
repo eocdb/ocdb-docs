@@ -27,9 +27,13 @@ or by drawing a polygon on the map.
 ### Advanced options
 
 In advanced options menu, user can select a __single product__ to be used as search criteria (a list of standard names for variables is available [here](ocdb-standard-field-unit.md)).
-The wavelength option allows to filter __hyperspectral__ and __multispectral__ measurements. __Water depth__ threshold
-can also be set (when provided in metadata). Finally, measurements taken in optically shallow waters can be either
-excluded or selected. 
+
+The wavelength option allows to filter __hyperspectral__ and __multispectral__ measurements. However, the categorisation of datasets as multi- or hyperspectral according to SEABASS is not implemented yet.
+
+__Water depth__ threshold can also be set (when provided in metadata). Water depth must be specified by the mandatory metadata header water_depth.
+
+Finally, measurements taken in optically shallow waters can be either excluded or selected. This characteristic can be
+defined in the metadata header field "data_use_warning" by stating "/data_use_warning=optically_shallow".
 
 ![](static/webui/advanced_options.png)
 

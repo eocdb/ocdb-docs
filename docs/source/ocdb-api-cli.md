@@ -74,12 +74,13 @@ api.set_config_param('server_url','[some server url]')
 
 ## Search Database with find_datasets()
 
-After login (see chapter "User Management" below), the method 'find_datasets' allows querying the Database for several information, using different keywords:
+After login (see chapter "User Management" below), the method 'find_datasets' allows querying
+the Database for multiple dataset characteristics, using different keywords:
 
 - __expr__: looks for any files containing any of the words passed. Also, Lucene syntax can be used (See below for more details)
 - __region__: looks for files containing measurements collected in the polygon defined by specified coordinates (format: "[West],[South],[East],[North]")
-- __start_time__: looks for any files containing measurement collected later than the selected date (format: "2016-07-01")
-- __end_time__: looks for any files containing measurement collected earlier than the selected date (format: "2019-07-01")
+- __start_time__: looks for any files containing measurement collected later than the selected date (format: "20160701")
+- __end_time__: looks for any files containing measurement collected earlier than the selected date (format: "20190701")
 - __wdepth__: looks for any files containing measurements collected within the defined range of water (bottom) depth (format:"[[min_depth],[max_depth]]")
 - __mtype__: filters radiometric data depending on wavelength option. Could be 'all', 'multispectral' or 'hyperspectral'
 - __shallow__: set to 'yes' to include also measurements indicated as done in shallow waters by the PIs (Default is 'no')
@@ -100,13 +101,40 @@ Dictionary keys are:
 - *query*: query parameterization
 - *dataset_ids*: ids of the returned datasets
 
-cli: 
+The syntax to search for SEABASS datasets via the command line interface is:
+
+cli syntax: 
+```bash
+ocdb-cli ds find --query [keyword]=[value or comma-separated list of values]
+```
+
+cli sample: 
 ```bash
 ocdb-cli ds find --query region=50,45,51,46
 ocdb-cli ds find --query start_time=2021-01-01 --query end_time=2021-12-31
 ```
 
-python:
+The Python method find_dataset( ... ) can be used as follows:
+
+```python
+def find_datasets(ctx: WsContext,
+                  expr: str = None,    # Lucene syntax can be used here!
+                  region: List[float] = None,    # comma-separated list of floats
+                  mtype: str = None,             # e. g. 'scan', 'above_water', ...
+                  wlmode: str = None,            # Not implemented yet
+                  shallow: str = 'no',           # as defined in metadata header "/data_use_warning= ..." 
+                  pmode: str = 'contains',       # e. g. "same cruise", "contains"       
+                  pgroup: List[str] = None,      # For details refer to: https://ocdb.readthedocs.io/en/latest/ocdb-search.html#product-groups
+                  status: str = None,            # Not implemented yet
+                  submission_id: str = None,     # equal to submission label as defined at submission
+                  pname: List[str] = None,       # for wavelength-dependent parameters, e. g. Lsky412, please use LUcene syntax
+                  geojson: bool = False,         # boolean, default is false
+                  offset: int = 1,               # used by web user interface for paging
+                  user_id: str = None,           # used by web user interface
+                  count: int = 1000)             # used by web user interface for paging, default = 1000
+```
+
+Python samples:
 ```python
 data = api.find_datasets(region='50,45,51,46')
 data['datasets']
@@ -119,11 +147,14 @@ data = api.find_datasets(end_time='2021-12-31')
 
 The first example below attempts to find data files that include the name *"Astrid"* in the investigators meta field.
 
-
 cli:
 ```bash
 ocdb-cli ds find --expr "investigators: *Astrid*"
+```
 
+results in the following output:
+
+```bash
 {
   "locations": {},
   "total_count": 4,
@@ -138,7 +169,11 @@ ocdb-cli ds find --expr "investigators: *Astrid*"
 python:
 ```python
 api.find_datasets(expr="investigators=*Astrid*")
+```
 
+results in the following output:
+
+```python
 {
   "locations": {},
   "total_count": 4 ,
@@ -164,7 +199,11 @@ ocdb-cli ds get --id 5d971154f9305e0001c6d700
 python:
 ```python
 api.get_dataset(dataset_id='5d971154f9305e0001c6d700', fmt='pandas')
+```
 
+results in the following output:
+
+```python
 	      date	    time	     lat	    lon	depth	  ...	 tot_chl_a
 0     20140723	12:30:00	-19.9743	57.4493	    0	     	  0.05280
 1	  20140723	14:00:00	-19.7216	57.6288	    0		      0.04767
@@ -172,8 +211,7 @@ api.get_dataset(dataset_id='5d971154f9305e0001c6d700', fmt='pandas')
 3	  20140723	20:00:00	-18.7211	58.3397	    0             0.04490
 4	  20140723	23:00:00	-18.2994	58.7023	    0		      0.07901
 
-...
-
+:
 ```
 
 ## User Management
