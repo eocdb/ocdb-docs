@@ -210,7 +210,6 @@ results in the following output:
 2	  20140723	17:00:00	-19.2121	57.9908	    0		      0.05028
 3	  20140723	20:00:00	-18.7211	58.3397	    0             0.04490
 4	  20140723	23:00:00	-18.2994	58.7023	    0		      0.07901
-
 :
 ```
 
@@ -226,7 +225,6 @@ Commands:
 - __pwd__     Set the password for a user (see below)
 - __update__  Update an existing user (see below)
 - __whoami__  Get the current user (see below)
-
 
 __General remarks on CLI syntax__
 
@@ -260,7 +258,9 @@ python:
 ```python
 api.login_user(username='scott', password='tiger')
 ```
+
 cli:
+
 ```bash
 ocdb-cli user logout
 ```
