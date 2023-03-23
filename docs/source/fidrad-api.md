@@ -1,0 +1,179 @@
+# Managing FidRadDb
+
+```markdown
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!  A T T E N T I O N  !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+This part is still under development!
+Changes can be made at any time. 
+
+```
+
+The work steps around the FidRadDb consist of: 
+- uploading the data
+  - The cal/char files can be uploaded via WEB-GUI as well as via command line interface.
+  - The files are automatically validated in this step
+  - Should anything be wrong with the files, the user will be informed
+- Obtain information about files already uploaded \
+  This can be done by:
+  - List the files available on the server
+  - Search the history.log to find out more information regarding uploaded files
+    - To find out when the file was uploaded?
+    - Who uploaded the file?
+    - Who downloaded the file?
+    - How many downloads of a file have been made?
+    - Has the file been deleted in the meantime and replaced by a revised version?
+  - Get the last entries from the Hostory.log
+    - Sometimes uploading and validating the files takes so long that the user receives 
+      the error message "Gateway Timout Error" instead of a report.
+      Don't worry!
+      This does not mean that the upload failed or was aborted.
+      It only means that the server is still processing the data, but has not managed 
+      to do so within a certain time window.
+      The processing of the data then continues in the background.
+      When the server has processed the data, a user can check the history.log to see 
+      whether everything worked or whether there were problems with individual files 
+      and they were therefore not uploaded.
+- Donload a file
+  - e.g. to use the file data for processing  
+- Delete a file
+  - e.g. if a file is to be replaced by a newer one, the existing file must be deleted first. 
+ 
+## Download the API
+
+The API can be downloaded here: \
+[https://github.com/eocdb/ocdb-client/tree/se_frm4soc_2_4](https://github.com/eocdb/ocdb-client/tree/se_frm4soc_2_4)
+
+You have to switch to the branch "se_frm4soc_2_4".
+As this API is currently still in the development phase, the new API is not available in the "master" branch. 
+
+## Use the API in you python application 
+If you want to integrate the new FidRadDB API in your own python application, in the file: \
+[https://github.com/eocdb/ocdb-client/blob/se_frm4soc_2_4/ocdb/api/OCDBApi.py](https://github.com/eocdb/ocdb-client/blob/se_frm4soc_2_4/ocdb/api/OCDBApi.py) 
+
+you will find the functions:
+```python
+
+    def fidrad_upload(self, cal_char_files: Union[str, Sequence[str]],
+                      doc_files: Optional[Union[str, Sequence[str]]]) -> JsonObj:
+        ...
+  
+    def fidrad_history_tail(self, num_lines: int) -> JsonObj:
+        ...
+    
+    def fidrad_history_search(self, search_string: str, max_num_lines: int) -> JsonObj:
+        ...
+    
+    def fidrad_list_files(self, name_part: str) -> JsonObj:
+        ...
+
+    def fidrad_delete_file(self, file_name: str) -> JsonObj:
+        ...
+    
+    def fidrad_download_file(self, file_name: str, output_dir: str) -> str:
+        ...
+```
+
+[Here you can see how to instantiate the API before you can use it](./ocdb-api-cli.html#python)
+
+## Use the API via commandline
+
+First of all please create a new conda environment.
+
+e.g.
+```shell
+# create an environment
+conda create -n ocdb-client-dev
+
+# activite the environment
+conda activate ocdb-clinet-dev
+
+# Your command line shall now be prefixed with (ocdb-clinet-dev) 
+
+# At last use this command, to install the command line app, configured for 
+# development purposes. So the command line app can be used before the app 
+# is deployed to conda.
+
+# It is very important to not forget the dot at the end of the line.   
+python -m pip install -e .
+```
+
+## First Use of the command line
+
+Type in the command 'ocdb-cli -h' and you will see the following help page. 
+
+```text
+(ocdb-client-dev) \path\to\the\github\repository\ocdb-client> ocdb-cli -h
+Usage: ocdb-cli [OPTIONS] COMMAND [ARGS]...
+
+  EUMETSAT Ocean Color In-Situ Database Client.
+
+Options:
+  --version       Show the version and exit.
+  --server <url>  OCDB Server URL.
+  -v, --verbose   OCDB client verbose reporting
+  -h, --help      Show this message and exit.
+
+Commands:
+  conf      Configuration management.
+  ds        Dataset management.
+  fidraddb  FidRadDB management
+  info      Get software infos.
+  lic       Show license and exit.
+  login     Login.
+  logout    Log out current user if logged in.
+  sbm       Submission management.
+  sbmfile   Submission management.
+  user      User management.
+  version   Get the version of the client.
+  whoami    Get current user.
+```
+In the list of available commands you will find the new 'fidraddb' command.
+
+Type in 'ocdb-cli fidraddb -h'
+
+```text
+(ocdb-client-dev) ...\ocdb-client> ocdb-cli fidraddb -h
+Usage: ocdb-cli fidraddb [OPTIONS] COMMAND [ARGS]...
+
+  FidRadDB management
+
+Options:
+  -h, --help  Show this message and exit.
+
+Commands:
+  delete          Will delete the file with the user defined name on the...
+  download        Will download the file with the user defined name from...
+  history-search  Returns a grep-like but bottom-up search result from...
+  history-tail    Get history tail from FidRadDb <num_lines> (default 50...
+  list            Lists the files available on the server.
+  upload          Upload fidraddb cal/char files.
+```
+In order to get detailed help to this six new fidraddb commands, type in 'ocdb-cli fidraddb <the_command> -h'
+
+In order to be able to really use this command line toll, the tool must be connected
+to a server. By typing the command 'ocdb-cli conf' you can find out to 
+which server the tool would currently send all requests.
+
+If this is not the server address you expect, you can change the server
+address by typing the command 'ocdb-cli conf server_url https://...'
+```text
+# e.g.
+(ocdb-client-dev) ...\ocdb-client> ocdb-cli conf server_url http://102.31.15.177:8080
+
+# or
+(ocdb-client-dev) ...\ocdb-client> ocdb-cli conf server_url http://ocdb-stage.eumetsat.int
+```
+And to check whether the new URL has been transferred correctly: 
+```text
+(ocdb-client-dev) ...\ocdb-client> ocdb-cli conf
+{
+  "server_url": "http://102.31.15.177:8080"
+} 
+```
+
+## Uploading cal/char files
+
+

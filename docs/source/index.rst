@@ -42,5 +42,6 @@ The Database has been designed in order to guarantee easy access to data, a stro
    ocdb-data-policy
    ocdb-PI-affiliation-experiment-cruise
    fidrad-database
+   fidrad-api
    ocdb-external-data-sources
    ocdb-MDB-user-manual

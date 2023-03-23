@@ -48,7 +48,7 @@ In order to access the database you need to configure the REST API server addres
 The default address to be used is ```https://ocdb.eumetsat.int```, i. e.:
 
 
-cli:
+### cli:
 ```bash
 # Check whether the server url for the ocdb-cli is configured:
 ocdb-cli conf 
@@ -58,7 +58,7 @@ https://ocdb.eumetsat.int
 ocdb-cli conf server_url [some url]
 ```
 
-python:
+### python:
 ```python
 from ocdb.api.OCDBApi import new_api
 
