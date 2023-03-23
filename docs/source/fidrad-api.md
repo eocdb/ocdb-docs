@@ -174,11 +174,19 @@ And to check whether the new URL has been transferred correctly:
 } 
 ```
 
-## Managing the FidRadDb
-For uploading, fetching information, download and delete files please see the
-help pages of the command line tool.
+## Uploading cal/char files to the server
+Uploading for now can be done only via command line tool or the python API.
+Later, this will also be possible via WEB-GUI.
 
-
- 
-
+For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb upload -h'.
+## List the files on the server
+For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb list -h'.
+## Search information in the history.log file
+For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb history-search -h'.
+## Get the end of the history.log file
+For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb history-tail -h'.
+## Download a cal/char file from the server
+For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb download -h'.
+## Delete a cal/char file from the server
+For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb delete -h'.
 
