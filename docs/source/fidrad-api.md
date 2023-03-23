@@ -178,15 +178,15 @@ And to check whether the new URL has been transferred correctly:
 Uploading for now can be done only via command line tool or the python API.
 Later, this will also be possible via WEB-GUI.
 
-For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb upload -h'.
+For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb upload -h' or visit the class OCDBApi in the python file [OCDBApi.py](https://github.com/eocdb/ocdb-client/blob/se_frm4soc_2_4/ocdb/api/OCDBApi.py).
 ## List the files on the server
-For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb list -h'.
+For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb list -h' or visit the class OCDBApi in the python file [OCDBApi.py](https://github.com/eocdb/ocdb-client/blob/se_frm4soc_2_4/ocdb/api/OCDBApi.py).
 ## Search information in the history.log file
-For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb history-search -h'.
+For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb history-search -h' or visit the class OCDBApi in the python file [OCDBApi.py](https://github.com/eocdb/ocdb-client/blob/se_frm4soc_2_4/ocdb/api/OCDBApi.py).
 ## Get the end of the history.log file
-For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb history-tail -h'.
+For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb history-tail -h' or visit the class OCDBApi in the python file [OCDBApi.py](https://github.com/eocdb/ocdb-client/blob/se_frm4soc_2_4/ocdb/api/OCDBApi.py).
 ## Download a cal/char file from the server
-For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb download -h'.
+For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb download -h' or visit the class OCDBApi in the python file [OCDBApi.py](https://github.com/eocdb/ocdb-client/blob/se_frm4soc_2_4/ocdb/api/OCDBApi.py).
 ## Delete a cal/char file from the server
-For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb delete -h'.
+For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb delete -h' or visit the class OCDBApi in the python file [OCDBApi.py](https://github.com/eocdb/ocdb-client/blob/se_frm4soc_2_4/ocdb/api/OCDBApi.py).
 
