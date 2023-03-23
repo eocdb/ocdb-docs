@@ -174,6 +174,11 @@ And to check whether the new URL has been transferred correctly:
 } 
 ```
 
-## Uploading cal/char files
+## Managing the FidRadDb
+For uploading, fetching information, download and delete files please see the
+help pages of the command line tool.
+
+
+ 
 
 
