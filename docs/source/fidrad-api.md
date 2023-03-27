@@ -85,7 +85,7 @@ First of all please create a new conda environment.
 e.g.
 ```shell
 # create an environment
-conda create -n ocdb-client-dev
+conda create --clone base -n ocdb-client-dev
 
 # activite the environment
 conda activate ocdb-clinet-dev
