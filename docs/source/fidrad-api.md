@@ -50,8 +50,7 @@ You have to switch to the branch "se_frm4soc_2_4".
 As this API is currently still in the development phase, the new API is not available in the "master" branch. 
 
 ## Use the API in you python application 
-If you want to integrate the new FidRadDB API in your own python application,  
-you will find the functions in the file: 
+If you want to integrate the new FidRadDB API in your own python application, you will find the functions in the file: 
 [https://github.com/eocdb/ocdb-client/blob/se_frm4soc_2_4/ocdb/api/OCDBApi.py](https://github.com/eocdb/ocdb-client/blob/se_frm4soc_2_4/ocdb/api/OCDBApi.py):
 
 ```python
