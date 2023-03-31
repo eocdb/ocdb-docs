@@ -76,21 +76,28 @@ you will find the functions:
         ...
 ```
 
-[Here you can see how to instantiate the API before you can use it](./ocdb-api-cli.html#python)
+[Here you can see how to instantiate the API before you can use it.](./ocdb-api-cli.html#python)
 
 ## Use the API via commandline
 
-First of all please create a new conda environment.
+The following lines assume that Git and Miniconda are installed on your system.
+
+First of all you have to check out the command line tool from github.
+see [Download the API](#download-the-api)
+
+Then please change to the directory "ocdb-client" that has just been checked out.
+
+Now please create a new conda environment.
 
 e.g.
 ```shell
 # create an environment
-conda create --clone base -n ocdb-client-dev
+conda create --clone base -n ocdb-client-test
 
 # activite the environment
-conda activate ocdb-clinet-dev
+conda activate ocdb-clinet-test
 
-# Your command line shall now be prefixed with (ocdb-clinet-dev) 
+# Your command line shall now be prefixed with (ocdb-clinet-test) 
 
 # At last use this command, to install the command line app, configured for 
 # development purposes. So the command line app can be used before the app 
@@ -153,7 +160,7 @@ Commands:
 ```
 In order to get detailed help to this six new fidraddb commands, type in 'ocdb-cli fidraddb <the_command> -h'
 
-In order to be able to really use this command line toll, the tool must be connected
+In order to be able to really use this command line tool, the tool must be connected
 to a server. By typing the command 'ocdb-cli conf' you can find out to 
 which server the tool would currently send all requests.
 
@@ -161,22 +168,21 @@ If this is not the server address you expect, you can change the server
 address by typing the command 'ocdb-cli conf server_url https://...'
 ```text
 # e.g.
-(ocdb-client-dev) ...\ocdb-client> ocdb-cli conf server_url http://102.31.15.177:8080
+(ocdb-client-dev) ...\ocdb-client> ocdb-cli conf server_url https://ocdb-stage.eumetsat.int
 
-# or
-(ocdb-client-dev) ...\ocdb-client> ocdb-cli conf server_url http://ocdb-stage.eumetsat.int
+or in these development test phase 
+(ocdb-client-dev) ...\ocdb-client> ocdb-cli conf server_url https://www.brockmann-consult.de/frm4soc
 ```
 And to check whether the new URL has been transferred correctly: 
 ```text
 (ocdb-client-dev) ...\ocdb-client> ocdb-cli conf
 {
-  "server_url": "http://102.31.15.177:8080"
+  "server_url": "https://www.brockmann-consult.de/frm4soc"
 } 
 ```
 
 ## Uploading cal/char files to the server
-Uploading for now can be done only via command line tool or the python API.
-Later, this will also be possible via WEB-GUI.
+Uploading can be done via command line tool or the python API.
 
 For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb upload -h' or visit the class OCDBApi in the python file [OCDBApi.py](https://github.com/eocdb/ocdb-client/blob/se_frm4soc_2_4/ocdb/api/OCDBApi.py).
 ## List the files on the server
