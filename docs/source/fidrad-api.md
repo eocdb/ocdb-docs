@@ -111,7 +111,7 @@ python -m pip install -e .
 Type in the command 'ocdb-cli -h' and you will see the following help page. 
 
 ```text
-(ocdb-client-dev) \path\to\the\github\repository\ocdb-client> ocdb-cli -h
+(ocdb-client-test) \path\to\the\github\repository\ocdb-client> ocdb-cli -h
 Usage: ocdb-cli [OPTIONS] COMMAND [ARGS]...
 
   EUMETSAT Ocean Color In-Situ Database Client.
@@ -141,7 +141,7 @@ In the list of available commands you will find the new 'fidraddb' command.
 Type in 'ocdb-cli fidraddb -h'
 
 ```text
-(ocdb-client-dev) ...\ocdb-client> ocdb-cli fidraddb -h
+(ocdb-client-test) ...\ocdb-client> ocdb-cli fidraddb -h
 Usage: ocdb-cli fidraddb [OPTIONS] COMMAND [ARGS]...
 
   FidRadDB management
@@ -167,14 +167,14 @@ If this is not the server address you expect, you can change the server
 address by typing the command 'ocdb-cli conf server_url https://...'
 ```text
 # e.g.
-(ocdb-client-dev) ...\ocdb-client> ocdb-cli conf server_url https://ocdb-stage.eumetsat.int
+(ocdb-client-test) ...\ocdb-client> ocdb-cli conf server_url https://ocdb-stage.eumetsat.int
 
 or in these development test phase 
-(ocdb-client-dev) ...\ocdb-client> ocdb-cli conf server_url https://www.brockmann-consult.de/frm4soc
+(ocdb-client-test) ...\ocdb-client> ocdb-cli conf server_url https://www.brockmann-consult.de/frm4soc
 ```
 And to check whether the new URL has been transferred correctly: 
 ```text
-(ocdb-client-dev) ...\ocdb-client> ocdb-cli conf
+(ocdb-client-test) ...\ocdb-client> ocdb-cli conf
 {
   "server_url": "https://www.brockmann-consult.de/frm4soc"
 } 
