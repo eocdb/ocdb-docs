@@ -10,6 +10,11 @@ This part is still under development!
 Changes can be made at any time. 
 
 ```
+## The FidRadDB database
+
+The FidRadDB is a database of characterisation and calibration files allowing the qualification of an individual instrument and its measurements as FRM-certified. The main objective of the FidRadDB is to gather in a same place all characterisation and calibration files of TRIOS and SEABIRD radiometers. To be accepted in the FidRadDB, files need to be in accordance with the format provided by the Tartu University laboratory (see also https://ocdb.readthedocs.io/en/latest/fidrad-database.html). Five types of files are accepted in FidRadDB. Four of them are for radiometer characterisation and they contain angular responsivity characterization results, polarization sensitivity characterization results, straylight characterization results and thermal characterization results. One file is for the calibration. It should contain radiometric calibration coefficients, linearity information, lamp and panel data. 
+
+FidRadDB is also questionned by the hyperCP processor (link?) to facilitate uncertainty budget calculation. HyperCP processor can access all files published in the open access mode as well as files submited by the hyperCP user.  
 
 The work steps around the FidRadDb consist of: 
 - uploading the data
@@ -36,10 +41,27 @@ The work steps around the FidRadDb consist of:
       When the server has processed the data, a user can check the history.log to see 
       whether everything worked or whether there were problems with individual files 
       and they were therefore not uploaded.
-- Donload a file
+- Donwload a file
   - e.g. to use the file data for processing  
 - Delete a file
   - e.g. if a file is to be replaced by a newer one, the existing file must be deleted first. 
+
+
+There are three types of users that can work with FidRadDB, they will have different permissions:
+- a guest user. No connection via login is needed. A guest user can only consult and download the open subset of the FidRadDB.
+- a FidRadDB user. This user needs to be connected with its login and password. To register as a FidRadDB user please contact XXXX.
+- an admin user. This status is restricted to FidRadDB managers only. 
+
+The table below summarizes the FidRadDB commands permissions for the different users types. 
+
+|        | Guest user | FidRadDB user | admin user |
+| ------ | ------ | ------ | ------ |
+|uploading | no | yes | yes |
+|downloading| yes | yes | yes |
+|deleting| no | yes but only its files | yes |
+|list| yes | yes | yes |
+|history.log| no | yes but only its files | yes |
+|history.tail| no | yes but only its files | yes |
  
 ## Download the API
 
