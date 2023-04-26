@@ -1,6 +1,8 @@
 # Fiducial radiometer database (FidRadDB)
 
-## Calibration and characterisation files (cal/char files)
+The FidRadDB is a database of characterisation and calibrations files allowing the qualification of an individual instrument and its measurements as FRM-certified. The main objective of the FidRadDB is to gather in a same place all characterisation and calibration files of TRIOS and SEABIRD radiometers to easily estimate a full uncertainty budget with the community processor. FidRadDB allows different actions which are listed in https://ocdb.readthedocs.io/en/latest/fidrad-api.html. All the files recorded in FidRadDB are in accordance with the format provided by the University of Tartu laboratory whose specificities are listed bellow.  
+
+## Calibration and characterisation files (cal/char files) in FidRadDB
 
 **1. Identification of file type**
 
@@ -9,7 +11,7 @@ The file type is recognized thanks to a keyword that should appear in the text f
 Five keywords are accepted (one for each file type). The keyword should be preceded
 by “!” and should be alone on a line (see example). The five keywords are listed below.
 
-**1.1 Calibration files**
+**1.1 Calibration file**
 
 ```eval_rst
 ======= ==============================================================
@@ -100,6 +102,7 @@ on the line(s) below. For some metadata, information is contained into a single 
 others extend over multiple lines. In this last case, the last line is followed by the keyword
 [END_OF_XXX], where XXX is the metadata name. Validity of metadata information is checked with
 different tests depending on the metadata. Those tests are explained in the following table.
+ 
 
 ```eval_rst
 ================ ===================== =====================================================================
@@ -108,21 +111,13 @@ Metadata name    Ending code           Test
 [CALDATE]           x                  Valid date format: YYYY-MM-DD HH:MM:SS
 [DEVICE]            x                  Device serial number. Either SAM_XXXX for TriOS or SATXXXX for
                                        Satlantic.
-[CALDATA]        [END_OF_CALDATA]      File type = RADCAL. More than 5 lines, columns are separated by
-                                       tabulations,  10 columns (i.e. elements per line) for TriOS senors
-                                       and 8 for satlantic sensors.
-                                       File type = POLDATA. More than 5 lines, columns are separated by
-                                       tabulations, 5 columns (i.e. elements per line)
-                                       File type = TEMPDATA. More than 5 lines, columns are separated by
-                                       tabulations, 3 columns (i.e. elements per line)
-[COSERROR]       [END_OF_COSERROR]     More than 5 lines, columns are separated by tabulations,
-                                       47 columns (i.e. elements per line)
-[UNCERTAINTY]    [END_OF_UNCERTAINTY]  File type = ANGDATA. More than 5 lines, columns are separated by
-                                       tabulations, 47 columns (i.e. elements per line)
-[UNCERTAINTY]    [END_OF_UNCERTAINTY]  File type = STRAYDATA. More than 5 lines, columns are separated
-                                       by tabulations,  256 columns (i.e. elements per line) 
-[LSF]            [END_OF_LSF]          More than 5 lines, columns are separated by tabulations,
-                                       256 columns (i.e. elements per line)
+[CALDATA]        [END_OF_CALDATA]      File type = RADCAL. Table with 10 columns separated with tab. 
+                                       File type = POLDATA. Table with 6 columns separated with tab representing pixel number, wavelength (nm), angle of the max sensitivity plane (rad), uncertainty (rad, k=2), semi-amplitude, uncertainty (rad, k=2) 
+                                       File type = TEMPDATA. Table with 4 columns separated with tab representing pixel number, wavelength (nm), per-pixel thermal correction factor (deg-1) and uncertainty (deg-1, k=2).
+[COSERROR]       [END_OF_COSERROR]     Table with 47 columns separated with tab.
+[UNCERTAINTY]    [END_OF_UNCERTAINTY]  File type = ANGDATA. Table with 47 columns separated with tab.
+[UNCERTAINTY]    [END_OF_UNCERTAINTY]  File type = STRAYDATA. Table with 256 columns separated with tab representing uncertainty associated to the straylight correction factors  
+[LSF]            [END_OF_LSF]          Table with 256 columns separated with tab representing the straylight correction factors 
 [AZIMUTH_ANGLE]     x                  Must be a float 
 [PANEL_ID]          x                  Not empty character string
 [LAMP_ID]           x                  Not empty character string
@@ -133,10 +128,8 @@ Metadata name    Ending code           Test
 [AMBIENT_TEMP]      x                  Must be a float
 [REFERENCE_TEMP]    x                  Must be a float
 [DEVICE_TEMP]       x                  Must be a float
-[PANELDATA]      [END_OF_PANELDATA]    More than 5 lines, columns are separated by tabulations,
-                                       4 columns (i.e. elements per line) 
-[LAMPDATA]       [END_OF_LAMPDATA]     More than 5 lines, columns are separated by tabulations,
-                                       4 columns (i.e. elements per line)
+[PANELDATA]      [END_OF_PANELDATA]    Table with 4 columns separated with tab representing the reflective plate wavelength (nm), bandwidth (nm), reflectance and uncertainty (%, k=2) 
+[LAMPDATA]       [END_OF_LAMPDATA]     Table with 4 columns separated with tab representing the calibration lamp wavelength (nm), bandwidth (nm), irradiance (mW/m2/nm) and uncertainty (%, k=2)
 ================ ===================== =====================================================================
 ```
 
@@ -163,6 +156,7 @@ AZIMUTH_ANGLE     M       x       x      x         x
 LAMP_CCT          x       x       O      x         x
 AMBIENT_TEMP      x       O       O       O        O
 REFERENCE_TEMP    x       x       x       x        M
+DEVICE_TEMP       O       x       x       x        M
 PANELDATA         x       O       x       x        x
 LAMPDATA          x       O       x       x        x
 ============== ======= ======= ====== ========= ========
