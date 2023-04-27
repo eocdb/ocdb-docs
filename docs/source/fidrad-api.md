@@ -97,7 +97,7 @@ If you want to integrate the new FidRadDB API in your own python application, yo
         ...
 ```
 
-[Here you can see how to instantiate the API before you can use it.](ocdb-api-cli.md)
+[Here you can see how to instantiate the API before you can use it.](./ocdb-api-cli.html#python)
 
 ## Use the API via commandline
 
