@@ -14,7 +14,7 @@ Changes can be made at any time.
 
 The FidRadDB is a database of characterisation and calibration files allowing the qualification of an individual instrument and its measurements as FRM-certified. The main objective of the FidRadDB is to gather in a same place all characterisation and calibration files of TRIOS and SEABIRD radiometers. To be accepted in the FidRadDB, files need to be in accordance with the format provided by the Tartu University laboratory (see also https://ocdb.readthedocs.io/en/latest/fidrad-database.html). Five types of files are accepted in FidRadDB. Four of them are for radiometer characterisation and they contain angular responsivity characterization results, polarization sensitivity characterization results, straylight characterization results and thermal characterization results. One file is for the calibration. It should contain radiometric calibration coefficients, linearity information, lamp and panel data. 
 
-FidRadDB is also requested by the hyperCP processor to facilitate uncertainty budget calculation. HyperCP processor can access all public cal/char files in the open access mode as well as files submitted by the hyperCP user itself.  
+FidRadDB is also requested by the Hyper OCR community processor (HyperCP) to facilitate uncertainty budget calculation. The [HyperCP](https://frm4soc2.eumetsat.int/HyperCP) can access all public cal/char files in the open access mode as well as files submitted by the hyperCP user itself.  
 
 The work steps around the FidRadDb consist of: 
 - uploading the data
