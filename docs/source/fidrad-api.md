@@ -14,7 +14,7 @@ Changes can be made at any time.
 
 The FidRadDB is a database of characterisation and calibration files allowing the qualification of an individual instrument and its measurements as FRM-certified. The main objective of the FidRadDB is to gather in a same place all characterisation and calibration files of TRIOS and SEABIRD radiometers. To be accepted in the FidRadDB, files need to be in accordance with the format provided by the Tartu University laboratory (see also https://ocdb.readthedocs.io/en/latest/fidrad-database.html). Five types of files are accepted in FidRadDB. Four of them are for radiometer characterisation and they contain angular responsivity characterization results, polarization sensitivity characterization results, straylight characterization results and thermal characterization results. One file is for the calibration. It should contain radiometric calibration coefficients, linearity information, lamp and panel data. 
 
-FidRadDB is also questionned by the hyperCP processor (link?) to facilitate uncertainty budget calculation. HyperCP processor can access all files published in the open access mode as well as files submited by the hyperCP user.  
+FidRadDB is also requested by the hyperCP processor to facilitate uncertainty budget calculation. HyperCP processor can access all public cal/char files in the open access mode as well as files submitted by the hyperCP user itself.  
 
 The work steps around the FidRadDb consist of: 
 - uploading the data
@@ -49,7 +49,7 @@ The work steps around the FidRadDb consist of:
 
 There are three types of users that can work with FidRadDB, they will have different permissions:
 - a guest user. No connection via login is needed. A guest user can only consult and download the open subset of the FidRadDB.
-- a FidRadDB user. This user needs to be connected with its login and password. To register as a FidRadDB user please contact XXXX.
+- a FidRadDB user. This user needs to be connected with its login and password. To register as a FidRadDB user please contact [EUMETSAT help desk](mailto:ops@eumetsat.int).
 - an admin user. This status is restricted to FidRadDB managers only. 
 
 The table below summarizes the FidRadDB commands permissions for the different users types. 
@@ -97,7 +97,7 @@ If you want to integrate the new FidRadDB API in your own python application, yo
         ...
 ```
 
-[Here you can see how to instantiate the API before you can use it.](./ocdb-api-cli.html#python)
+[Here you can see how to instantiate the API before you can use it.](ocdb-api-cli.md)
 
 ## Use the API via commandline
 
