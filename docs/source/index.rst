@@ -19,7 +19,8 @@ available to the ocean colour community:
 
 and to ensure long-term stewardship of these critical data.
 
-The radiometer calibration and characterisation files are collected in the Fiducial Radiometer database FidRadDB_.
+The radiometer calibration and characterisation files are collected in the Fiducial Radiometer database FidRadDB_,
+which is hosted by the OCDB.
 
 This tool enables researchers to store and share, if elected, their in-situ data in an organised Database in a standardized format (SEABASS).
 
