@@ -39,7 +39,7 @@ The FidRadDB can be accessed by the Hyper OCR Community Processor, abbreviated H
 
 .. _OCDB: https://ocdb.eumetsat.int
 
-.. _FidRadDB: ./fidrad-database.md
+.. _FidRadDB: ./fidrad-database.html
 
 .. _HyperCP: https://frm4soc2.eumetsat.int/HyperCP/
 
