@@ -37,7 +37,7 @@ The Database has been designed in order to guarantee easy access to data, a stro
 
 .. _OCDB: http://ocdb.eumetsat.int
 
-.. _FidRadDB: fidrad-database.html
+.. _FidRadDB: ./fidrad-database.md
 
 .. image:: static/webui/logos.png
 
