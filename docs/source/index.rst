@@ -7,10 +7,21 @@ Welcome to the Copernicus Ocean Colour Database (OCDB) System!
 ======================================================
 Comparison between simultaneous in-situ and satellite measurements are fundamental for satellite product validation,
 to prove the accuracy and limitations of the data services.
-In addition, in-situ measurements alone or combined with satellite products are required for Ocean Colour algorithm development.
-Considering the need for sustained access to in situ-Fiducial Reference Measurements for the Copernicus programme, the aim of the Copernicus Ocean Colour Database (OCDB_) is to provide a platform to collect, organize and make available to the ocean colour community, ocean colour related in-situ measurements, and to ensure long-term stewardship of these critical data.
+In addition, in-situ measurements alone or combined with satellite products are required for Ocean Colour algorithm
+development.
+Considering the need for sustained access to in situ-Fiducial Reference Measurements for the Copernicus programme,
+the aim of the Copernicus Ocean Colour Database (OCDB_) is to provide a platform to collect, organize and make
+available to the ocean colour community:
 
-This tool enables researchers to store and share, if elected, their in-situ data in an organised Database in a standardized format.
+1. ocean colour related in-situ measurements and
+
+2. radiometer calibration and characterisation files
+
+and to ensure long-term stewardship of these critical data.
+
+The radiometer calibration and characterisation files are collected in the Fiducial Radiometer database FidRadDB_.
+
+This tool enables researchers to store and share, if elected, their in-situ data in an organised Database in a standardized format (SEABASS).
 
 Only when elected by the contributor, in-situ measurements are published into the Database and made available to the public. 
 Quality checks on format, measurements as well as on protocol compliance are performed, and a quality flag is provided for each measurement. 
@@ -24,6 +35,8 @@ The Database has been designed in order to guarantee easy access to data, a stro
 
 
 .. _OCDB: http://ocdb.eumetsat.int
+
+.. _FidRadDB: fidrad-database.html
 
 .. image:: static/webui/logos.png
 
