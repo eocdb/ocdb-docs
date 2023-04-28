@@ -33,11 +33,11 @@ The Database has been designed in order to guarantee easy access to data, a stro
 
          Go to the Copernicus OCDB_
 
-
-
 .. _OCDB: http://ocdb.eumetsat.int
 
 .. _FidRadDB: ./fidrad-database.md
+
+.. image:: static/webui/ocdb_fidraddb_hypercp_flow_diagram.png
 
 .. image:: static/webui/logos.png
 
