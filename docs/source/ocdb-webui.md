@@ -4,92 +4,117 @@ The main feature of the OCDB Database system is the stewardship and provision of
 high-quality in-situ data to the Ocean Colour community through an enhanced search
 facility. 
 
-## Get Data: Search
+## Search webpage: Search and retrieve in-situ data
 
-The OCDB WebUI offers a _Search_ interface. 
-Data can be searched by acquisition date, product groups and a _Search_ text field. 
+The OCDB WebUI offers a _Search_ interface. Data can be searched by acquisition date,
+product groups and a _Search_ text field. Advanced options allow filtering for:
 
-In the _Search_ text field, users can enter any word(s) that will be used to screen the Database for any file
-containing that word(s). This field also allows the use of the so-called Lucene syntax which enables searches
-for specific field values and also allows chaining.
+1. multi- and/or hyperspectral data,
+2. water depth,
+3. measurements in optical shallow water (no, yes, exclusively) and
+4. products.
 
-Please refer to the [__Search__](ocdb-search.md) chapter, for a complete list of product groups and more details
-about the Lucene search syntax.
+In the _Search_ text field, users can enter any word(s) that will be used to screen the
+Database for any file containing that word(s). This field also allows the use of the
+so-called Lucene syntax which enables searches for specific field values and also allows
+chaining.
+
+Please refer to the [__Search__](ocdb-search.md) chapter, for a complete list of product
+groups and more details about the Lucene search syntax.
 
 Note that only those data which were elected for publication by their submitter, are available in searches. 
 
 ### Set region
-Region for search can be set both either by entering coordinates by clicking on 'MANUALLY ENTER COORDINATES' button,
-or by drawing a polygon on the map.
+Region for a spatial search can be set in different ways:
+
+1. entering coordinates by clicking on 'MANUALLY ENTER COORDINATES' button,
+2. drawing a polygon on the map or
+3. using lucene syntax (see sample in [OCDB search](ocdb-search.md))
 
 ![](static/webui/select_region.png)
 
 ### Advanced options
 
-In advanced options menu, user can select a __single product__ to be used as search criteria (a list of standard names for variables is available [here](ocdb-standard-field-unit.md)).
-
-The wavelength option allows to filter __hyperspectral__ and __multispectral__ measurements. However, the categorisation of datasets as multi- or hyperspectral according to SEABASS is not implemented yet.
+In advanced options menu, The wavelength option allows to filter __hyperspectral__ and __multispectral__ measurements. However, the categorisation of datasets as multi- or hyperspectral according to SEABASS is not implemented yet.
 
 __Water depth__ threshold can also be set (when provided in metadata). Water depth must be specified by the mandatory metadata header water_depth.
 
-Finally, measurements taken in optically shallow waters can be either excluded or selected. This characteristic can be
+Measurements taken in optically shallow waters can be either excluded or selected. This characteristic can be
 defined in the metadata header field "data_use_warning" by stating "/data_use_warning=optically_shallow".
+
+Finally, user can select a __single product__ to be used as search criteria (a list of standard names for variables is available [here](ocdb-standard-field-unit.md)).
 
 ![](static/webui/advanced_options.png)
 
 ### Save search
-Any query can be saved for replicating the same search in the future (search options are saved, not the results!).
-Click on _SAVE SEARCH_ and assign a name to it. Search query can be edited and/or shared by clicking on _<>_ button.
+
+Any query can be saved for replicating the same search again during the current session
+(search options are saved, not the results!). Click on _SAVE SEARCH_ and assign a name to it.
+Search query can be edited and/or shared by clicking on _<>_ button.
 
 ![](static/webui/save_search.png)
 
-## Upload Data: Submissions
+## Submit webpage: Upload Data
 
-In this section the data submission process is described.
-Only registered users are allowed to submit data. Please contact ops@eumetsat.int to be registered.
-Registered users after login in can manage new and past submission in the _Submit_ page.
+In this section the data submission process is described. Only registered users are allowed
+to submit data. Please contact ops@eumetsat.int to be registered. Registered users after
+login can manage new and past submission in the _Submit_ page.
 
 ### New Submission
 
-To add a __new submission__, go to _Submit_ page and click on _NEW SUBMISSION_ in the top left corner.
-A new dialog will open. Please add an identifier (_Submission Label_) for the submission and a path
-(_affiliation/experiment/cruise_) where submission files will be stored under.
-The submission label must univocally refer to the submission, while submission path could be the same for
-multiple submissions.
+To add a __new submission__, go to _Submit_ page and click on _NEW SUBMISSION_ in the top
+left corner. A new dialog will open. Please add an identifier (_Submission Label_) for the
+submission and a path (_affiliation/experiment/cruise_) where submission files will be stored.
+
+The submission label must univocally refer to the submission, while submission path could be
+the same for multiple submissions.
 
 ![](static/webui/submission_dialog.png)
 
-By clicking on _Publish Data_ the user agrees to publish the data. After going through an automated quality check and being processed by an OCDB administrator (admin action _Process Submission into DB_), submissions become publically available.
-Selecting a date in _Publication Date_ will delay the publication of the data belonging to this submission. 
-Data for which the publication is not agreed are ingested into the Database but accessible only to the Database
-administrators and the owner of the data. An agreement to publish can also be provided or rejected anytime in the future by
-contacting ops@eumetsat.int.
+By checking _Publish Data_ the user agrees to publish the data.
+
+Selecting a date in _Publication Date_ will delay the publication of the data belonging to
+this submission. Data for which the publication is not allowed by the submitting person
+can be stored in the Database but are accessible to the Database administrators as well
+as to the owner of the data. An agreement to publish can also be provided or rejected
+anytime in the future by contacting ops@eumetsat.int.
 
 Drag and drop or select measurement and documentation files in the dedicated windows.
 File format and documentation required are described [here](ocdb-contribute.md).
-Click on _SUBMIT_ to initiate the validation process. Files containing measurements are immediately automatically checked according to [validation rules](ocdb-validation-config.md).
+Click on _SUBMIT_ to initiate the validation process. Files containing measurements are
+immediately automatically checked according to [validation rules](ocdb-validation-config.md).
 
-In case of errors, the status of the submission is set to _SUBMITTED_.
+After going through an automated quality check valid files will be uploaded to OCDB
+(Status VALIDATED). Invalid files will be uploaded as well having the status SUBMITTED,
+i. e. INVALID.
+
+After upload, the files' content is transferred to the database by an OCDB administrator
+(admin action _Process Submission into DB_). A second admin action will make the datasets
+publicly available, if elected by the submitting person.
 
 ![](static/webui/submission.png)
 
-Submissions containing errors are not further processed into the Database.
+Submissions containing errors (status INVALID) are not further processed into the Database.
 
-In case of errors or warnings, for each submission, click on ![](static/webui/list.png) _List Files_ to open a dialog listing all data and documentation files and showing the results of the validation, shown for each data file:
+In case of errors or warnings, for each submission, click on ![](static/webui/list.png)
+_List Files_ to open a dialog listing all data and documentation files and showing the
+results of the validation, shown for each data file:
 
 ![](static/webui/list_ex.png)
 
-In the dialog click on ![](static/webui/list.png) _List import Issues_ to show the list of error and warning messages, e. g.:
+In the dialog click on ![](static/webui/list.png) _List import Issues_ to show the list of
+error and warning messages, e. g.:
 
 ![](static/webui/list_import_issues_dlg.png)
 
-If you need assistance, please contact ops@eumetsat.int indicating the identifier (_Submission label_) of the submission.
+If you need assistance, please contact ops@eumetsat.int indicating the identifier
+(_Submission label_) of the submission.
 
-Using the __action tools__ single files can be thus downloaded ![](static/webui/download.png) and re-uploaded ![](static/webui/upload.png) and
-validated again.
+Using the __action tools__ single files can be thus downloaded ![](static/webui/download.png),
+re-uploaded ![](static/webui/upload.png) and validated again.
 
-If the validation succeeds, the status of the submission is set to _VALIDATED_ and further processed by Database
-administrators.
+If the validation succeeds, the status of the submission is set to _VALIDATED_ and can further
+be processed into the database by database administrators.
 
 The picture below, summarises the whole process for submission and data validation.
 
