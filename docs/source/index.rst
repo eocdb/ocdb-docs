@@ -22,20 +22,26 @@ and to ensure long-term stewardship of these critical data.
 The radiometer calibration and characterisation files are collected in the Fiducial Radiometer database FidRadDB_,
 which is hosted by the OCDB.
 
-This tool enables researchers to store and share, if elected, their in-situ data in an organised Database in a standardized format (SEABASS).
+This tool enables researchers to store their in-situ data and radiometer files in an organised Database and to share them,
+if elected, in standardized file formats.
 
 Only when elected by the contributor, in-situ measurements are published into the Database and made available to the public. 
-Quality checks on format, measurements as well as on protocol compliance are performed, and a quality flag is provided for each measurement. 
+Quality checks on format, measurements as well as on protocol compliance are performed, and a quality flag is provided for
+each measurement.
  
 Published, best quality data are used to generate Match-up files with Sentinel-3 Level 2 Ocean Colour OLCI A and B products which are also made available through the Database.
 
-The Database has been designed in order to guarantee easy access to data, a strong search engine, automation via command line access and interoperability with other Databases (in particular NASA SeaBASS Database).
+The Databases OCDB and FidRadDB have been designed in order to guarantee easy access to data, a strong search engine,
+automation via command line access and interoperability with other Databases (in particular NASA SeaBASS Database).
+The FidRadDB can be accessed by the Hyper OCR Community Processor, abbreviated HyperCP or HCP (Read more about HyperCP_).
 
          Go to the Copernicus OCDB_
 
-.. _OCDB: http://ocdb.eumetsat.int
+.. _OCDB: https://ocdb.eumetsat.int
 
 .. _FidRadDB: ./fidrad-database.md
+
+.. _HyperCP: https://frm4soc2.eumetsat.int/HyperCP/
 
 .. image:: static/webui/ocdb_fidraddb_hypercp_flow_diagram.png
 
