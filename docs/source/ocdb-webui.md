@@ -85,8 +85,8 @@ Click on _SUBMIT_ to initiate the validation process. Files containing measureme
 immediately automatically checked according to [validation rules](ocdb-validation-config.md).
 
 After going through an automated quality check valid files will be uploaded to OCDB
-(Status VALIDATED). Invalid files will be uploaded as well having the status SUBMITTED,
-i. e. INVALID.
+(Status VALIDATED). Invalid files will be uploaded as well having the status SUBMITTED
+(but not valid), i. e. INVALID.
 
 After upload, the files' content is transferred to the database by an OCDB administrator
 (admin action _Process Submission into DB_). A second admin action will make the datasets
@@ -94,7 +94,7 @@ publicly available, if elected by the submitting person.
 
 ![](static/webui/submission.png)
 
-Submissions containing errors (status INVALID) are not further processed into the Database.
+Submissions containing errors (status SUBMITTED / INVALID) are not further processed into the Database.
 
 In case of errors or warnings, for each submission, click on ![](static/webui/list.png)
 _List Files_ to open a dialog listing all data and documentation files and showing the
@@ -178,9 +178,11 @@ For each file, the following status can be set:
 
 - __SUBMITTED__: submission contains errors and could not be validated
 - __VALIDATED__: all submission files passed file format check (no errors, warnings allowed)
-- __CANCELLED__: database entries linked to this submission have been canceled from the Database
-- __PROCESSED__: submission data are searchable in the Database by submission owner and admin users
-- __PUBLISHED__: submission data are searchable in the Database by anyone
+- __CANCELLED__: database entries linked to this submission have been cancelled from the Database
+- __PAUSED__: database entries linked to this submission have been paused by an OCDB administrator for further
+  analysis, e. g. requests to the submitting person
+- __PROCESSED__: submission data are searchable in the Database via the search page by submission owner and admin users
+- __PUBLISHED__: submission data are searchable in the Database via the search page by anyone
 
 Whenever a submission is updated, its status in the submission page is set accordingly to _SUBMITTED_ or _VALIDATED_ again. 
 On the other hand, files already published and searchable are not updated until the new/updated files are processed
