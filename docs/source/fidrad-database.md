@@ -21,7 +21,86 @@ RADCAL  radiometric calibration coefs & linearity, lamp and panel data
 ======= ==============================================================
 ```
 
-**1.2 Chracterisation files**
+RADCAL file example:
+
+
+
+```bash
+!FRM4SOC_CP
+!RADCAL
+# radiometric calibration coefs & linearity, lamp and panel data
+
+# comments start with # (ignored by the processor)
+# no empty lines between the parameter signatures in [] and the parameter values
+# parameters are case insensitive
+# parameters can be inserted in any order, except the first two signatures
+# columns are tab- or space-delimited
+
+[VERSION]
+0.1
+
+[CALDATE]
+2022-06-27 09:48:49
+
+[CALLAB]
+Tartu Observatory
+
+[USER]
+Riho Vendt
+
+[LAMP_ID]
+TO_123
+
+[PANEL_ID]
+SG1234_2023
+
+[DEVICE]
+SAM_1234
+
+# Correlated color temperature (K)
+[LAMP_CCT]
+2990.7
+
+# wavelength (nm)	bandwidth (nm)	irradiane (mW/m2/nm)	uncertainty (%, k=2)
+[LAMPDATA]
+300.00	0.00	1.5637	2.31
+300.50	0.00	1.5923	2.29
+301.00	0.00	1.6214	2.27
+...
+999.00	0.00	205.2464	3.51
+999.50	0.00	205.2022	3.51
+1000.00	0.00	205.1578	3.51
+[END_OF_LAMPDATA]
+
+# wavelength (nm)	bandwidth (nm)	reflectance	uncertainty (%, k=2)
+[PANELDATA]
+350.00	0.00	0.9890	1.20
+360.00	0.00	0.9890	1.20
+370.00	0.00	0.9890	1.20
+...
+1680.00	0.00	0.9480	0.50
+1690.00	0.00	0.9460	0.50
+1700.00	0.00	0.9520	0.50
+[END_OF_PANELDATA]
+
+[AMBIENT_TEMP]
+21.0
+
+# pixel no	wavelength (nm)	irradiane responsivity (unit depends on the device class)	uncertainty (%, k=2)	dark1	dark2 (content depends on the instrument class)	raw1	stdev1	raw2	stdev2
+[CALDATA]
+0	307.06	4	0.00	12	0.000000	64	0.00	32	0.00
+1	310.37	0.000000	0.00	0.015465	0.020153	122.59	0.77	124.29	1.42
+2	313.69	0.000000	0.00	0.015386	0.020376	164.19	0.75	163.29	1.27
+3	317.01	0.000000	0.00	0.015388	0.020274	213.12	0.67	213.09	1.59
+...
+252	1139.36	0.000000	0.00	0.015429	0.019834	-1.85	0.66	-1.44	1.23
+253	1142.52	0.000000	0.00	0.015495	0.019865	-2.61	0.65	-1.57	1.49
+254	1145.68	0.000000	0.00	0.015523	0.019730	-2.65	0.65	-4.71	1.29
+255	1148.83	0.000000	0.00	0.015997	0.020891	-2.95	0.68	-4.97	1.38
+[END_OF_CALDATA]
+```
+
+**1.2 Characterisation files**
 
 ```eval_rst
 ========= ==============================================================
