@@ -23,8 +23,6 @@ RADCAL  radiometric calibration coefs & linearity, lamp and panel data
 
 RADCAL file example:
 
-
-
 ```bash
 !FRM4SOC_CP
 !RADCAL
