@@ -1,1 +1,2 @@
-theme: readthedocs
+#theme: readthedocs
+theme: sphinx_rtd_theme
