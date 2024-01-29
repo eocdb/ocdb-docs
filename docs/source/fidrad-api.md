@@ -12,35 +12,45 @@ Changes can be made at any time.
 ```
 ## The FidRadDB database
 
-The FidRadDB is a database of characterisation and calibration files allowing the qualification of an
-individual instrument and its measurements as FRM-certified. The main objective of the FidRadDB is to
-gather in a same place all characterisation and calibration files of TRIOS and SEABIRD radiometers. To
-be accepted in the FidRadDB, files need to be in accordance with the format provided by the Tartu University
-laboratory (see also https://ocdb.readthedocs.io/en/latest/fidrad-database.html). Five types of files are
-accepted in FidRadDB. Four of them are for radiometer characterisation and they contain angular responsivity
-characterization results, polarization sensitivity characterization results, straylight characterization
-results and thermal characterization results. One file is for the calibration. It should contain radiometric
-calibration coefficients, linearity information, lamp and panel data. 
+The FidRadDB ("Fiducial Radiometer" Data Base) is a database of files containing information on radiometric
+calibration and either class-based or individual characterisations done on radiometers. 
+The initial objective of the FidRadDB is to centralise all existing information on cal/char
+of TriOS and SeaBird radiometers calibrated and characterised at the Tartu Observatory (University of Tartu, Estonia)
+in the frame on the [FRM4SOC-2 project](https://frm4soc2.eumetsat.int/). Future endeavors may include cal/char coefficients obtained
+in other contexts. To be accepted in the FidRadDB, files need to be in accordance with the format provided by the Tartu Obstervatory (see also [this](https://ocdb.readthedocs.io/en/latest/fidrad-database.html)).
 
-FidRadDB is also requested by the Hyper OCR community processor (HyperCP) to facilitate uncertainty budget
-calculation. The [HyperCP](https://github.com/nasa/HyperCP/tree/master) can access all public cal/char files in
-the open access mode as well as files submitted by the hyperCP user itself.  
+Five types of files are allowed in FidRadDB:
 
-The work steps around the FidRadDb consist of: 
-- uploading the data
-  - The cal/char files can be uploaded via WEB-GUI as well as via command line interface.
-  - The files are automatically validated in this step
-  - Should anything be wrong with the files, the user will be informed
-- Obtain information about files already uploaded \
-  This can be done by:
-  - List the files available on the server
-  - Search the history.log to find out more information regarding uploaded files
-    - To find out when the file was uploaded?
+- The "RADCAL" type contains information on radiometric calibration. It should contain
+    - lamp and panel irradiances,
+    - radiometric calibration coefficients, and
+    - dark and raw counts used to determine non-linearities in the radiometric response.
+
+- The remaining four file types contain information on radiometric characterisation, in particular:
+    - angular responsivity (ANGULAR)
+    - polarization sensitivity (POLAR)
+    - straylight (STRAY)
+    - thermal response (THERMAL)
+
+
+FidRadDB is also accessible by the HyperInSPACE Community Processor ([HyperCP](https://github.com/nasa/HyperCP/tree/master)), which ingests the cal/char information to derive - among other OC products - Remote-sensing reflectance and normalized water-leaving radiance of above-water hyperpsectral radiometric measurements including uncertainty budget calculation. HyperCP can ingest all public cal/char files available in FidRadDB in open access mode as well as files outside FidRadDB provided manually by the user. 
+
+The work steps around the FidRadDB consist of: 
+
+- Uploading the data
+  - The cal/char files can be uploaded via WEB-GUI as well as via command line interface (CLI).
+  - The files are automatically validated in this step.
+  - Should anything be wrong with the files, the user will be informed.
+
+- Obtain information about available files. This can be done by:
+  - Listing the files available on the server
+  - Searching the history.log to find out more information regarding uploaded files, such as
+    - When was the file uploaded?
     - Who uploaded the file?
     - Who downloaded the file?
     - How many downloads of a file have been made?
     - Has the file been deleted in the meantime and replaced by a revised version?
-  - Get the last entries from the Hostory.log
+  - Get the last entries from the history.log
     - Sometimes uploading and validating the files takes so long that the user receives 
       the error message "Gateway Timout Error" instead of a report.
       Don't worry!
