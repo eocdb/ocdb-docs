@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Copernics Ocean Colour Database'
+project = 'Copernicus Ocean Colour Database'
 copyright = '2019, Copernicus'
 author = 'Copernicus'
 
