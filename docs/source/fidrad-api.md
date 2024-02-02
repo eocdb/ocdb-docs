@@ -8,32 +8,8 @@
 
 This part is still under development!
 Changes can be made at any time. 
-Test
+
 ```
-## The FidRadDB database
-
-The FidRadDB ("Fiducial Radiometer" Data Base) is a database of files containing information on radiometric
-calibration and either class-based or individual characterisations done on radiometers. 
-The initial objective of the FidRadDB is to centralise all existing information on cal/char
-of TriOS and SeaBird radiometers calibrated and characterised at the Tartu Observatory (University of Tartu, Estonia)
-in the frame on the [FRM4SOC-2 project](https://frm4soc2.eumetsat.int/). Future endeavors may include cal/char coefficients obtained
-in other contexts. To be accepted in the FidRadDB, files need to be in accordance with the format provided by the Tartu Obstervatory (see also [this](https://ocdb.readthedocs.io/en/latest/fidrad-database.html)).
-
-Five types of files are allowed in FidRadDB:
-
-- The "RADCAL" type contains information on radiometric calibration. It should contain
-    - lamp and panel irradiances,
-    - radiometric calibration coefficients, and
-    - dark and raw counts used to determine non-linearities in the radiometric response.
-
-- The remaining four file types contain information on radiometric characterisation, in particular:
-    - angular responsivity (ANGULAR)
-    - polarization sensitivity (POLAR)
-    - straylight (STRAY)
-    - thermal response (THERMAL)
-
-
-FidRadDB is also accessible by the HyperInSPACE Community Processor ([HyperCP](https://github.com/nasa/HyperCP/tree/master)), which ingests the cal/char information to derive - among other OC products - Remote-sensing reflectance and normalized water-leaving radiance of above-water hyperpsectral radiometric measurements including uncertainty budget calculation. HyperCP can ingest all public cal/char files available in FidRadDB in open access mode as well as files outside FidRadDB provided manually by the user. 
 
 The work steps around the FidRadDB consist of: 
 
@@ -82,14 +58,10 @@ The table below summarizes the FidRadDB commands permissions for the different u
 |list| yes | yes | yes |
 |history.log| no | yes but only its files | yes |
 |history.tail| no | yes but only its files | yes |
- 
+
 ## Download the API
 
-The API can be downloaded here: \
-[https://github.com/eocdb/ocdb-client/tree/se_frm4soc_2_4](https://github.com/eocdb/ocdb-client/tree/se_frm4soc_2_4)
-
-You have to switch to the branch "se_frm4soc_2_4".
-As this API is currently still in the development phase, the new API is not available in the "master" branch. 
+The API comes together with the OCDB package, see [here](https://github.com/eocdb/ocdb-client/blob/master/README.md).
 
 ## Use the API in you python application 
 If you want to integrate the new FidRadDB API in your own python application, you will find the functions in the file: 
@@ -117,14 +89,13 @@ If you want to integrate the new FidRadDB API in your own python application, yo
         ...
 ```
 
-[Here you can see how to instantiate the API before you can use it.](./ocdb-api-cli.html#python)
+[Here](./ocdb-api-cli.html#python) you can see how to instantiate the API before you can use it.
 
 ## Use the API via commandline
 
 The following lines assume that Git and Miniconda are installed on your system.
 
-First of all you have to check out the command line tool from github.
-see [Download the API](#download-the-api)
+First of all you have to check out the command line tool from github. See [Download the API](#download-the-api)
 
 Then please change to the directory "ocdb-client" that has just been checked out.
 
@@ -148,7 +119,7 @@ conda activate ocdb-clinet-test
 python -m pip install -e .
 ```
 
-## First Use of the command line
+## First use of the command line
 
 Type in the command 'ocdb-cli -h' and you will see the following help page. 
 
@@ -199,7 +170,7 @@ Commands:
   list            Lists the files available on the server.
   upload          Upload fidraddb cal/char files.
 ```
-In order to get detailed help to this six new fidraddb commands, type in 'ocdb-cli fidraddb <the_command> -h'
+In order to get detailed help to this six FidRadDB commands, type in 'ocdb-cli fidraddb <the_command> -h'
 
 In order to be able to really use this command line tool, the tool must be connected
 to a server. By typing the command 'ocdb-cli conf' you can find out to 
@@ -236,4 +207,3 @@ For detailed information how to upload cal/char files please type in 'ocdb-cli f
 For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb download -h' or visit the class OCDBApi in the python file [OCDBApi.py](https://github.com/eocdb/ocdb-client/blob/se_frm4soc_2_4/ocdb/api/OCDBApi.py).
 ## Delete a cal/char file from the server
 For detailed information how to upload cal/char files please type in 'ocdb-cli fidraddb delete -h' or visit the class OCDBApi in the python file [OCDBApi.py](https://github.com/eocdb/ocdb-client/blob/se_frm4soc_2_4/ocdb/api/OCDBApi.py).
-
